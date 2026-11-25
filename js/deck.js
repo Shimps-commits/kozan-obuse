@@ -127,6 +127,7 @@
       count(c, 10000, o.fwd, 2600, 250);
     },
     market: function (s, st) { s.classList.toggle('lit', st >= 1); },
+    together: function (s, st) { s.classList.toggle('dim', st === 1); },
     timeline: function (s, st) { s.classList.toggle('s1', st >= 1); s.classList.toggle('s2', st >= 2); },
     cost: function () { renderCost(); },
     days: function (s, st) {
@@ -300,6 +301,7 @@
   /* ---------- 六斎市のマス ---------- */
   function buildCal() {
     var cal = document.getElementById('cal'), hot = 0;
+    if (!cal) return;
     for (var d = 1; d <= 30; d++) {
       var s = document.createElement('span');
       s.textContent = d;

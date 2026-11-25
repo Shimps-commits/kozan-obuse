@@ -120,9 +120,6 @@
       [[1806, '誕生', 'Born'], [1836, '31歳', '31'], [1842, '37歳', '37'], [1866, '61歳', '61'], [1879, '74歳', '74']].forEach(function (p) {
         txt(svg, X(p[0]), yk - 44, p[1], p[2], 'tl-age');
       });
-      [[1806, '47歳', '47'], [1842, '83歳', '83'], [1849, '90歳', '90']].forEach(function (p) {
-        txt(svg, X(p[0]), yh + 62, p[1], p[2], 'tl-age h');
-      });
       // 凡例
       var lx = L, ly = H - 8;
       ['learn', 'save', 'host', 'give', 'teach'].forEach(function (k, i) {

@@ -6,15 +6,12 @@
   if (Q.has('thumb') || Q.has('snap')) return;
 
   var TITLES = {
-    ryo: ['10,000両', '10,000 ryō'], village: ['村に、世界を連れてきた男', 'He brought the world to Obuse'],
-    kozan: ['高井鴻山', 'Takai Kōzan'], waves: ['神奈川沖浪裏・凱風快晴', 'The Great Wave · Red Fuji'],
-    'obuse-hokusai': ['小布施にある北斎', 'Hokusai, still in Obuse'], map: ['人と物と知恵が交わる町', 'Where roads crossed'],
-    market: ['六斎市', 'Market days'], house: ['高井家', 'The Takai house'], grandpa: ['祖父・長救', 'His grandfather'],
-    timeline: ['鴻山と北斎の年表', 'Two lives, side by side'], study: ['16年', '16 years'], kura: ['蔵を開く', 'The storehouses'],
-    age: ['37と83', '37 and 83'], shizai: ['私財で', 'Out of his own pocket'], 'fuji-ryu': ['北斎、90歳', 'Hokusai at 90'],
-    gave: ['差し出した順', 'What he gave'], cost: ['1万両はいくらか', 'What 10,000 ryō means'],
-    depleted: ['資産が底をついた', 'His fortune ran out'], teach: ['それでも、教えた', 'Still, he taught'],
-    days: ['この2日間', 'Your two days'], why: ['なぜ差し出したのか', 'Why give it all?'], journey: ['旅の問い', 'The question to carry']
+    ryo: ['10,000両', '10,000 ryō'], young: ['北斎を小布施に招いた若者', 'The young man who brought Hokusai'],
+    kozan: ['高井鴻山', 'Takai Kōzan'], map: ['小布施', 'Obuse'], study: ['16年', '16 years'],
+    art: ['絵に、のめり込んだ', 'Lost in painting'], kura: ['蔵を開く', 'The storehouses'], age: ['37と83', '37 and 83'],
+    together: ['私財で、ともに描く', 'Paid for, and painted together'], timeline: ['鴻山の78年', 'Kōzan’s 78 years'],
+    gave: ['差し出した順', 'What he gave'], teach: ['それでも、教えた', 'Still, he taught'],
+    days: ['この2日間', 'Your two days'], why: ['旅の問い', 'The question to carry']
   };
   var store = {
     get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
@@ -27,7 +24,7 @@
 
   var D = null, S = { i: 0, step: 0, steps: [], N: 0, id: '' }, firstChange = true;
   var $ = function (s) { return document.querySelector(s); };
-  var hud = $('#hud'), ov = $('#ov'), help = $('#help'), grid = $('#ovGrid');
+  var hud = $('#hud'), ov = $('#ov'), help = $('#help'), grid = $('#ovGrid'), lb = $('#lb');
   var pad = function (n) { return (n < 10 ? '0' : '') + n; };
   var lang = function () { return D ? D.lang() : H.lang; };
 
@@ -69,7 +66,7 @@
     d.steps.forEach(function (s, k) { total += s + 1; if (k < d.i) done += s + 1; });
     done += d.step + 1;
     $('#prog i').style.width = (done / total * 100) + '%';
-    var art = d.id === 'waves';
+    var art = d.id === 'young' || d.id === 'together';
     H.classList.toggle('art', art);
     if (d.entered || !art) setInspect(false);
     markCur();
@@ -98,7 +95,7 @@
 
   /* ---------- 重ね画面 ---------- */
   function isOpen(el) { return el.classList.contains('open'); }
-  function anyOpen() { return isOpen(ov) || isOpen(help); }
+  function anyOpen() { return isOpen(ov) || isOpen(help) || isOpen(lb); }
   function open(el) {
     closeAll();
     el.hidden = false;
@@ -115,9 +112,16 @@
     el.classList.remove('open');
     setTimeout(function () { if (!isOpen(el)) el.hidden = true; }, 300);
   }
-  function closeAll() { close(ov); close(help); }
+  function closeAll() { close(ov); close(help); close(lb); }
   function toggle(el) { if (isOpen(el)) close(el); else open(el); }
   help.addEventListener('click', function () { close(help); });
+  lb.addEventListener('click', function () { close(lb); });
+  function openLB(fig) {
+    var img = fig.querySelector('img');
+    lb.querySelector('img').src = img.getAttribute('src');
+    lb.querySelector('.lbcap').innerHTML = '<span class="ja">' + (fig.dataset.capJa || '') + '</span><span class="en">' + (fig.dataset.capEn || '') + '</span>';
+    open(lb);
+  }
   ov.addEventListener('click', function (e) { if (e.target === ov || e.target === grid) close(ov); });
 
   function buildGrid() {
@@ -171,6 +175,7 @@
       return true;
     }
     if (isOpen(help)) { if (k !== 'Tab') close(help); return true; }
+    if (isOpen(lb)) { if (k !== 'Tab') close(lb); return true; }
     if (k === 'Escape') { if (H.classList.contains('inspect')) { setInspect(false); return true; } return false; }
     if (k === 'o' || k === 'O' || k === 'g' || k === 'G') { open(ov); return true; }
     if (k === '?' || k === '/' || k === 'h' || k === 'H') { open(help); return true; }
@@ -184,6 +189,8 @@
   window.__uiClick = function (e) {
     if (Date.now() < swallowClick) return true;
     if (H.classList.contains('inspect')) { setInspect(false); return true; }
+    var fig = e.target.closest('.zoomable');
+    if (fig && !(fig.classList.contains('bd') && !fig.classList.contains('vis'))) { openLB(fig); return true; }
     var dot = e.target.closest('.pt .dot');
     if (dot) {
       var pts = [].slice.call(document.querySelectorAll('[data-id="days"] .pt'));

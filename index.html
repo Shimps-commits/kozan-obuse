@@ -4,25 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>高井鴻山の目で 小布施</title>
-<meta name="description" content="Obuse through the eyes of Takai Kōzan — 高井鴻山の目で小布施を見る。北斎を迎えた男の物語。">
+<meta name="description" content="「画狂老人」葛飾北斎を小布施に招いた若者、高井鴻山。Takai Kōzan, the young man who brought Hokusai to Obuse.">
 <meta name="theme-color" content="#0b0d11">
 <meta property="og:title" content="高井鴻山の目で 小布施 / Obuse through Kōzan’s eyes">
-<meta property="og:description" content="He brought the world to Obuse. 村に、世界を連れてきた男。">
+<meta property="og:description" content="「画狂老人」葛飾北斎を小布施に招いた若者。The young man who brought Hokusai to Obuse.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="thumbs/ja-01.jpg">
+<meta property="og:image" content="thumbs/ja-02.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0d11'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%232a5ba8'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ffffff'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/shippori-800-subset.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/deck.css">
 </head>
 <body>
 <!--
-  操作：→ / Space / クリック＝次　← ＝前　Home / End　L＝日英　F＝全画面　P＝発表者画面　T＝換算切替　B＝暗転
+  構成（14画面）
+   序  1 10,000両 ／ 2 北斎を招いた若者 ／ 3 高井鴻山
+   一  4 小布施（地図）／ 5 16年（遊学）／ 6 絵にのめり込む ／ 7 蔵を開く
+   二  8 37と83 ／ 9 私財で、ともに描く ／ 10 年表
+   三  11 差し出した順 ／ 12 底をつく → 教える
+   結  13 この2日間 ／ 14 問い
+  操作：→ / Space / クリック＝次　← ＝前　Home / End　L＝日英　F＝全画面　P＝発表者画面　O＝一覧　B＝暗転
   ビルド：data-b="n" はステップ n から表示、data-x="n" はステップ n で消える
-  画像の差し込み枠：.slot[data-img] は、そのファイルがあれば背景に出る（掲載許可が出た画像を img/permitted/ に置く）
 -->
 <div id="deck">
 
-<!-- 1 オープニング -->
+<!-- 1 -->
 <section class="slide" data-id="ryo">
   <div class="c">
     <div class="m fs nw bd fade" data-b="1" style="--fs:34"><span class="cnt" data-from="0" data-to="10000">0</span><span class="u ja">両</span><span class="u en"> ryō</span></div>
@@ -30,110 +35,66 @@
 </section>
 
 <!-- 2 -->
-<section class="slide" data-id="village">
-  <div class="ink"></div>
-  <div class="c">
-    <h1 class="m fs rv" style="--fs:15"><span class="ja">村に、<br>世界を連れてきた男</span><span class="en" style="font-size:.86em">He brought<br>the world to Obuse.</span></h1>
+<section class="slide" data-id="young">
+  <div class="layer">
+    <div class="backdrop" style="background-image:url(img/kanagawa.jpg)"></div>
+    <img class="fit kb dimimg" src="img/kanagawa.jpg" data-k="2.2" data-mode="cover" alt="">
   </div>
+  <div class="c shade">
+    <h1 class="m fs rv" style="--fs:10.5;line-height:1.3"><span class="ja">「画狂老人」葛飾北斎を<br>小布施に招いた若者</span><span class="en" style="font-size:.92em">The young man who<br>brought Hokusai to Obuse</span></h1>
+    <p class="sub big rv en-only" style="--d:1.6s"><span class="en">Hokusai called himself “the old man mad about painting.”</span></p>
+  </div>
+  <p class="cap"><span class="ja">葛飾北斎『冨嶽三十六景 神奈川沖浪裏』1831年頃</span><span class="en">Hokusai, “The Great Wave,” c. 1831</span></p>
 </section>
 
 <!-- 3 -->
 <section class="slide" data-id="kozan">
-  <div class="slot dim" data-img="img/permitted/kozan-portrait.jpg"></div>
-  <div class="c" style="gap:calc(var(--u)*4)">
-    <h1 class="m fs rv" style="--fs:17;letter-spacing:.06em"><span class="ja">高井鴻山</span><span class="en" style="font-size:.8em;letter-spacing:.02em">Takai Kōzan</span></h1>
-    <p class="m ai2 fs" style="--fs:6">1806–1883</p>
-    <div class="swap">
-      <p class="sub big bd" data-x="1"><span class="ja">「我は吾が様に依る」</span><span class="en">“I go by my own way.”</span></p>
-      <p class="sub big bd" data-b="1"><span class="ja">遊び人で、探求心のかたまり</span><span class="en">A playboy, endlessly curious.</span></p>
+  <div class="c row">
+    <div class="kz-name">
+      <h1 class="m fs rv" style="--fs:15"><span class="ja">高井鴻山</span><span class="en" style="font-size:.78em">Takai<br>Kōzan</span></h1>
+      <p class="m ai2 yrs2">1806–1883</p>
+      <div class="swap left">
+        <p class="sub big bd" data-x="1"><span class="ja">「我は吾が様に依る」</span><span class="en">“I go by my own way.”</span></p>
+        <p class="sub big bd" data-b="1"><span class="ja">遊び人で、探求心のかたまり</span><span class="en">A playboy, endlessly curious.</span></p>
+      </div>
     </div>
+    <figure class="por-wrap zoomable" data-cap-ja="高井鴻山像（横山上龍筆）" data-cap-en="Portrait of Takai Kōzan, by Yokoyama Jōryū">
+      <img class="fit por" src="img/kozan-portrait.jpg" data-k="2.4" data-box="parent" alt="高井鴻山像">
+      <figcaption class="pcap"><span class="ja">横山上龍筆</span><span class="en">by Yokoyama Jōryū</span></figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- 4 北斎で引き込む -->
-<section class="slide" data-id="waves">
-  <div class="layer bd fade" data-x="1">
-    <div class="backdrop" style="background-image:url(img/kanagawa.jpg)"></div>
-    <img class="fit kb" src="img/kanagawa.jpg" data-k="2.2" data-mode="cover" alt="">
-    <p class="cap"><span class="ja">葛飾北斎『冨嶽三十六景 神奈川沖浪裏』1831年頃</span><span class="en">Hokusai, “The Great Wave,” c. 1831</span></p>
-  </div>
-  <div class="layer bd fade" data-b="1">
-    <div class="backdrop" style="background-image:url(img/gaifu.jpg)"></div>
-    <img class="fit kb" src="img/gaifu.jpg" data-k="2.2" data-mode="cover" alt="">
-    <p class="cap"><span class="ja">葛飾北斎『冨嶽三十六景 凱風快晴』</span><span class="en">Hokusai, “Fine Wind, Clear Morning” (Red Fuji)</span></p>
+<!-- 4 -->
+<section class="slide" data-id="map">
+  <div class="mapbox" data-map="trade"></div>
+  <div class="corner">
+    <div class="m fs nw" style="--fs:13"><span class="ja">小布施</span><span class="en">Obuse</span></div>
+    <p class="sub"><span class="ja">街道が交わる市場町</span><span class="en">A market town where roads met.</span></p>
   </div>
 </section>
 
 <!-- 5 -->
-<section class="slide" data-id="obuse-hokusai">
-  <p class="sub top rv"><span class="ja">小布施にある北斎</span><span class="en">Hokusai, still in Obuse</span></p>
-  <div class="two">
-    <div class="work">
-      <div class="slot" data-img="img/permitted/kanmachi-ceiling.jpg"></div>
-      <div class="m fs bd" data-b="0" style="--fs:30;--d:.5s">86<span class="u ja">歳</span></div>
-      <p class="sub"><span class="ja">1845　上町祭屋台の天井絵</span><span class="en">1845 · Kanmachi float ceiling</span></p>
-      <p class="m wname"><span class="ja">「男浪・女浪」</span><span class="en">Male and Female Waves</span></p>
-    </div>
-    <div class="work">
-      <div class="slot" data-img="img/permitted/gansho-in-phoenix.jpg"></div>
-      <div class="m fs bd" data-b="0" style="--fs:30;--d:1s">89<span class="u ja">歳</span></div>
-      <p class="sub"><span class="ja">1848年頃　岩松院の天井絵</span><span class="en">c. 1848 · Ganshō-in ceiling</span></p>
-      <p class="m wname"><span class="ja">「鳳凰図」</span><span class="en">Phoenix</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- 6 第1章 小布施：日本地図 -->
-<section class="slide" data-id="map">
-  <div class="mapbox" data-map="trade"></div>
-</section>
-
-<!-- 7 -->
-<section class="slide" data-id="market">
-  <div class="c" style="gap:calc(var(--u)*4)">
-    <h1 class="m fs mk-t bd" data-b="1" style="--fs:26">3<small class="ja">と</small><small class="en">&amp;</small>8</h1>
-    <div class="cal" id="cal"></div>
-    <p class="sub bd" data-b="1" style="--d:1.2s"><span class="ja">六斎市　米の相場を決めた市</span><span class="en">The market that set the price of rice.</span></p>
-  </div>
-</section>
-
-<!-- 8 -->
-<section class="slide" data-id="house">
-  <div class="ink"></div>
-  <div class="c">
-    <div class="m fs nw rv" style="--fs:30">300<span class="u ja">石</span><span class="u en"> koku</span></div>
-    <p class="sub rv" style="--d:1s"><span class="ja">上町の豪農商　酒・穀物・塩・茶</span><span class="en">Kanmachi merchants: sake, grain, salt, tea.</span></p>
-  </div>
-</section>
-
-<!-- 9 -->
-<section class="slide" data-id="grandpa">
-  <p class="sub top rv"><span class="ja">1783　祖父・長救と天明の飢饉</span><span class="en">1783 · His grandfather and the Tenmei famine</span></p>
-  <div class="three">
-    <div class="bd" data-b="1"><div class="m fs" style="--fs:16">404<span class="u ja">両</span><span class="u en"> ryō</span></div><p class="sub"><span class="ja">無償で差し出す</span><span class="en">given away</span></p></div>
-    <div class="bd" data-b="2"><div class="m fs" style="--fs:16">600<span class="u ja">両</span><span class="u en"> ryō</span></div><p class="sub"><span class="ja">利子なしで貸す</span><span class="en">lent, no interest</span></p></div>
-    <div class="bd" data-b="3"><div class="m fs" style="--fs:16">300<span class="u ja">俵</span><span class="u en"> bales</span></div><p class="sub"><span class="ja">籾を安値で売る</span><span class="en">rice, sold cheap</span></p></div>
-  </div>
-  <p class="sub bottom bd" data-b="4"><span class="ja">幕府から「高井」の姓を許される</span><span class="en">The shogunate grants the name “Takai.”</span></p>
-</section>
-
-<!-- 10 第2章 年表（全体） -->
-<section class="slide" data-id="timeline" data-steps="2">
-  <p class="sub top rv"><span class="ja">鴻山と北斎　1783–1883</span><span class="en">Kōzan and Hokusai, 1783–1883</span></p>
-  <div class="tlx tl-full"><div class="tl-tip"></div></div>
-</section>
-
-<!-- 11 -->
 <section class="slide" data-id="study">
   <div class="mapbox" data-map="study"></div>
   <div class="corner">
     <div class="m fs nw" style="--fs:24">16<span class="u ja">年</span><span class="u en"> years</span></div>
     <p class="sub"><span class="ja">15歳から31歳　京都と江戸で学ぶ</span><span class="en">From 15 to 31, in Kyoto and Edo.</span></p>
   </div>
-  <div class="tlx tl-mini side" data-hl="1820-1836"><div class="tl-tip"></div></div>
 </section>
 
-<!-- 12 -->
+<!-- 6 -->
+<section class="slide" data-id="art">
+  <h1 class="m fs gal-t rv" style="--fs:8"><span class="ja">絵に、のめり込んだ。</span><span class="en">Lost in painting.</span></h1>
+  <div class="gal">
+    <figure class="zoomable bd" data-b="0" style="--d:.5s" data-cap-ja="高井鴻山の花の絵" data-cap-en="Flowers, by Takai Kōzan"><img src="img/kozan-flowers.jpg" alt="高井鴻山の花の絵"><figcaption><span class="ja">花の絵</span><span class="en">Flowers</span></figcaption></figure>
+    <figure class="zoomable bd" data-b="1" data-cap-ja="高井鴻山の妖怪画" data-cap-en="Yōkai, by Takai Kōzan"><img src="img/kozan-yokai-scroll.jpg" alt="高井鴻山の妖怪画"><figcaption><span class="ja">妖怪画</span><span class="en">Yōkai</span></figcaption></figure>
+    <figure class="zoomable bd wide" data-b="2" data-cap-ja="高井鴻山の妖怪画" data-cap-en="Yōkai, by Takai Kōzan"><img src="img/kozan-yokai-ride.jpg" alt="高井鴻山の妖怪画"><figcaption><span class="ja">妖怪画</span><span class="en">Yōkai</span></figcaption></figure>
+  </div>
+  <p class="sub gal-s rv" style="--d:1.2s"><span class="ja">高井鴻山の筆　クリックで大きく</span><span class="en">By Takai Kōzan · click to enlarge</span></p>
+</section>
+
+<!-- 7 -->
 <section class="slide" data-id="kura">
   <div class="kura-light"></div>
   <div class="c">
@@ -141,97 +102,76 @@
     <p class="sub rv" style="--d:3s"><span class="ja">1836　天保の大飢饉　31歳</span><span class="en">1836 · The Great Tenpō Famine · age 31</span></p>
   </div>
   <div class="door l"></div><div class="door r"></div>
-  <div class="tlx tl-mini" data-hl="1836"><div class="tl-tip"></div></div>
 </section>
 
-<!-- 13 -->
+<!-- 8 -->
 <section class="slide" data-id="age">
-  <div class="c" style="gap:calc(var(--u)*5);padding-bottom:calc(var(--u)*16)">
+  <div class="c" style="gap:calc(var(--u)*6)">
     <div class="pair">
-      <div class="who w37"><div class="m fs" style="--fs:30">37</div><p class="sub"><span class="ja">鴻山</span><span class="en">Kōzan</span></p></div>
+      <div class="who w37"><div class="m fs" style="--fs:32">37</div><p class="sub"><span class="ja">鴻山</span><span class="en">Kōzan</span></p></div>
       <div class="gap46 m bd fade" data-b="1" style="--d:.9s">+46</div>
-      <div class="who w83"><div class="m fs" style="--fs:30">83</div><p class="sub"><span class="ja">北斎</span><span class="en">Hokusai</span></p></div>
+      <div class="who w83"><div class="m fs" style="--fs:32">83</div><p class="sub"><span class="ja">北斎</span><span class="en">Hokusai</span></p></div>
     </div>
     <div class="ask bd" data-b="2">
       <label class="sub"><span class="ja">あなたの年齢</span><span class="en">Your age</span><input id="age" type="text" inputmode="numeric" maxlength="3" autocomplete="off"></label>
       <p class="sub ans" id="ans"><span class="ja"><span class="an">—</span>歳の巨匠を、家に迎えられますか</span><span class="en">Could you host a <span class="an">—</span>-year-old master?</span></p>
     </div>
   </div>
-  <div class="tlx tl-mini" data-hl="1842"><div class="tl-tip"></div></div>
 </section>
 
-<!-- 14 -->
-<section class="slide" data-id="shizai">
-  <div class="slot dim" data-img="img/permitted/kanmachi-ceiling.jpg"></div>
-  <div class="c" style="padding-bottom:calc(var(--u)*12)">
-    <h1 class="m fs rv" style="--fs:24"><span class="ja">私財で。</span><span class="en" style="font-size:.58em">Out of his<br>own pocket.</span></h1>
-    <p class="sub rv" style="--d:1.2s"><span class="ja">1845　上町祭屋台の天井に「男浪・女浪」</span><span class="en">1845 · Waves for the Kanmachi float ceiling</span></p>
+<!-- 9 -->
+<section class="slide" data-id="together">
+  <div class="layer l-dz bd fade" data-x="2">
+    <div class="backdrop" style="background-image:url(img/dotozu.jpg)"></div>
+    <img class="fit" src="img/dotozu.jpg" data-k="2.4" data-fw=".94" data-fh=".78" alt="">
+    <p class="cap"><span class="ja">上町祭屋台の天井絵「男浪・女浪」1845年　北斎</span><span class="en">“Male and Female Waves,” Kanmachi float ceiling, 1845 · Hokusai</span></p>
   </div>
-  <div class="tlx tl-mini" data-hl="1845"><div class="tl-tip"></div></div>
-</section>
-
-<!-- 15 -->
-<section class="slide" data-id="fuji-ryu">
-  <div class="slot dim" data-img="img/permitted/fuji-koshi-ryu.jpg"></div>
-  <div class="c" style="padding-bottom:calc(var(--u)*12)">
-    <div class="m fs nw rv" style="--fs:34">90<span class="u ja">歳</span></div>
-    <p class="sub rv" style="--d:1s"><span class="ja">1849　北斎の絶筆『富士越龍』</span><span class="en">1849 · Hokusai’s last: Dragon over Mt Fuji</span></p>
+  <div class="c shizai">
+    <h1 class="m fs bd" data-b="1" data-x="2" style="--fs:22"><span class="ja">私財で。</span><span class="en" style="font-size:.6em">Out of his<br>own pocket.</span></h1>
   </div>
-  <div class="tlx tl-mini" data-hl="1849"><div class="tl-tip"></div></div>
+  <div class="layer bd fade" data-b="2" data-x="3">
+    <div class="backdrop" style="background-image:url(img/hoo.jpg)"></div>
+    <img class="fit kb" src="img/hoo.jpg" data-k="2" data-fw=".92" data-fh=".8" alt="">
+    <p class="cap"><span class="ja">葛飾北斎『鳳凰』</span><span class="en">Katsushika Hokusai, “Phoenix”</span></p>
+  </div>
+  <div class="layer bd fade" data-b="3">
+    <div class="backdrop" style="background-image:url(img/zo-tojin.jpg)"></div>
+    <img class="fit kb" src="img/zo-tojin.jpg" data-k="2.2" data-fw=".92" data-fh=".8" alt="">
+    <p class="cap"><span class="ja">『象と唐人図』北斎の原画による鴻山との合作と伝わる</span><span class="en">“Elephant and Chinese Men” — said to be painted together</span></p>
+  </div>
 </section>
 
-<!-- 16 差し出した順 -->
+<!-- 10 -->
+<section class="slide" data-id="timeline" data-steps="2">
+  <p class="sub top rv"><span class="ja">鴻山の78年</span><span class="en">Kōzan’s 78 years</span></p>
+  <div class="tlx tl-full"><div class="tl-tip"></div></div>
+</section>
+
+<!-- 11 -->
 <section class="slide" data-id="gave">
   <p class="sub top rv"><span class="ja">差し出した順</span><span class="en">What he gave, in order</span></p>
   <div class="stack">
     <div class="it bd" data-b="1" data-x="2" data-year="1847"><div class="m fs" style="--fs:24">500<span class="u ja">両</span><span class="u en"> ryō</span></div><p class="sub"><span class="ja">1847　善光寺大地震の救恤金</span><span class="en">1847 · Relief after the Zenkōji quake</span></p></div>
     <div class="it bd" data-b="2" data-x="3" data-year="1853"><div class="m fs" style="--fs:24"><span class="ja">籾</span><span class="en">Rice</span></div><p class="sub"><span class="ja">1853　品川台場の築造に献上</span><span class="en">1853 · For the Shinagawa forts</span></p></div>
     <div class="it bd" data-b="3" data-x="4" data-year="1860"><div class="m fs" style="--fs:24"><span class="ja">献金</span><span class="en">A gift</span></div><p class="sub"><span class="ja">1860　和宮の降嫁に</span><span class="en">1860 · For Princess Kazu’s wedding</span></p></div>
-    <div class="it bd" data-b="4" data-x="5" data-year="1866"><div class="m fs nw" style="--fs:24">10,000<span class="u ja">両</span><span class="u en"> ryō</span></div><p class="sub"><span class="ja">1866　幕府に約束</span><span class="en">1866 · Promised to the shogunate</span></p></div>
-    <div class="it bd" data-b="5"><div class="m fs" style="--fs:20"><span class="ja">質に出す</span><span class="en">Pawned</span></div><p class="sub"><span class="ja">献金のため、農地と蔵を質屋に</span><span class="en">Farmland and storehouses, to pay.</span></p></div>
+    <div class="it bd" data-b="4" data-year="1866"><div class="m fs nw" style="--fs:24">10,000<span class="u ja">両</span><span class="u en"> ryō</span></div><p class="sub big"><span class="ja">1866　約束した額。払った額は記録にない</span><span class="en">1866 · A promise. What he paid: no record.</span></p></div>
   </div>
   <div class="tlx tl-mini" data-hl="1847-1866"><div class="tl-tip"></div></div>
 </section>
 
-<!-- 17 1万両＝数億円 -->
-<section class="slide" data-id="cost">
-  <div class="c costA bd fade" data-x="2" style="gap:calc(var(--u)*1.5);padding-bottom:calc(var(--u)*10)">
-    <div class="m fs nw" style="--fs:18">10,000<span class="u ja">両</span><span class="u en"> ryō</span></div>
-    <div class="m fs nw ai2 amt-wrap bd" data-b="1" style="--fs:14"><span class="ja">＝<span class="amt-ja">約1億〜13億</span>円</span><span class="en">≈ ¥<span class="amt-en">0.1–1.3 billion</span></span></div>
-    <p class="sub bd" data-b="1" style="--d:.5s;margin-top:calc(var(--u)*3)"><span class="ja rate-ja">換算のしかたで、これだけ変わる</span><span class="en rate-en">It depends on how you count.</span></p>
-    <div class="tg bd" data-b="1" style="--d:.8s">
-      <button type="button" data-m="range" class="on"><span class="ja">幅</span><span class="en">range</span></button>
-      <button type="button" data-m="late"><span class="ja">幕末の米</span><span class="en">rice, 1860s</span></button>
-      <button type="button" data-m="rice"><span class="ja">江戸中〜後期の米</span><span class="en">rice, 1700s–1800s</span></button>
-      <button type="button" data-m="soba"><span class="ja">そば</span><span class="en">soba</span></button>
-    </div>
-  </div>
-  <div class="c costB bd" data-b="2" style="padding-bottom:calc(var(--u)*10)">
-    <h1 class="m fs" style="--fs:18"><span class="ja">約束した額。</span><span class="en" style="font-size:.7em">A promise.</span></h1>
-    <p class="sub big"><span class="ja">実際に払った額は、記録がない</span><span class="en">What he actually paid: no record.</span></p>
-  </div>
-  <div class="tlx tl-mini" data-hl="1866-1869"><div class="tl-tip"></div></div>
-</section>
-
-<!-- 18 -->
-<section class="slide" data-id="depleted">
-  <div class="c" style="padding-bottom:calc(var(--u)*12)">
-    <h1 class="m fs rv" style="--fs:13"><span class="ja">資産が底をついた。</span><span class="en" style="font-size:.9em">His fortune ran out.</span></h1>
-  </div>
-  <div class="tlx tl-mini" data-hl="1867-1878"><div class="tl-tip"></div></div>
-</section>
-
-<!-- 19 -->
+<!-- 12 -->
 <section class="slide" data-id="teach">
   <div class="lamp"></div>
-  <div class="c" style="padding-bottom:calc(var(--u)*12)">
-    <h1 class="m fs rv" style="--fs:17"><span class="ja">それでも、<br>教えた。</span><span class="en" style="font-size:.8em">Still,<br>he taught.</span></h1>
-    <p class="sub rv" style="--d:1.4s"><span class="ja">74歳　高矣義塾　学ぶ者を拒まなかった</span><span class="en">At 74: a school that turned no one away.</span></p>
+  <div class="c">
+    <h1 class="m fs bd" data-x="1" style="--fs:13"><span class="ja">資産が底をついた。</span><span class="en" style="font-size:.9em">His fortune ran out.</span></h1>
   </div>
-  <div class="tlx tl-mini" data-hl="1879"><div class="tl-tip"></div></div>
+  <div class="c">
+    <h1 class="m fs bd" data-b="1" style="--fs:17"><span class="ja">それでも、<br>教えた。</span><span class="en" style="font-size:.8em">Still,<br>he taught.</span></h1>
+    <p class="sub bd" data-b="1" style="--d:1s"><span class="ja">74歳　高矣義塾　学ぶ者を拒まなかった</span><span class="en">At 74: a school that turned no one away.</span></p>
+  </div>
 </section>
 
-<!-- 20 第3章 この2日間 -->
+<!-- 13 -->
 <section class="slide" data-id="days">
   <h1 class="m fs days-t rv" style="--fs:11"><span class="ja">この2日間</span><span class="en">Your two days</span></h1>
   <div class="dayrows">
@@ -254,21 +194,15 @@
   <p class="q bd" data-b="6"><span class="ja">この書斎で、二人は何を語り合ったのでしょう</span><span class="en">What did the two men talk about in this room?</span></p>
 </section>
 
-<!-- 21 クロージング -->
+<!-- 14 -->
 <section class="slide" data-id="why">
   <div class="glow"></div>
   <div class="c" style="gap:calc(var(--u)*4)">
-    <p class="sub big rv"><span class="ja">そこまでして、彼は</span><span class="en">He gave up so much.</span></p>
-    <h1 class="m fs rv" style="--fs:15;--d:1.4s"><span class="ja">なぜ<br>差し出したのか。</span><span class="en" style="font-size:.78em">Why did he<br>give it all?</span></h1>
+    <h1 class="m fs bd" data-x="1" style="--fs:15"><span class="ja">なぜ<br>差し出したのか。</span><span class="en" style="font-size:.78em">Why did he<br>give it all?</span></h1>
   </div>
-</section>
-
-<!-- 22 -->
-<section class="slide" data-id="journey">
-  <div class="ink"></div>
   <div class="c" style="gap:calc(var(--u)*4)">
-    <p class="sub big rv"><span class="ja">サロン文化という支援とつながりは、</span><span class="en">The salon: support, and people connected.</span></p>
-    <h1 class="m fs rv" style="--fs:13;--d:1.4s"><span class="ja">小布施に<br>何を残したのか。</span><span class="en" style="font-size:.8em">What did it<br>leave in Obuse?</span></h1>
+    <p class="sub big bd" data-b="1"><span class="ja">サロン文化という支援とつながりは、</span><span class="en">The salon: support, and people connected.</span></p>
+    <h1 class="m fs bd" data-b="1" style="--fs:13;--d:.8s"><span class="ja">小布施に<br>何を残したのか。</span><span class="en" style="font-size:.8em">What did it<br>leave in Obuse?</span></h1>
   </div>
 </section>
 
@@ -315,9 +249,8 @@
       <dt>Home ・ End</dt><dd><span class="ja">最初 ／ 最後</span><span class="en">First / last</span></dd>
       <dt>O</dt><dd><span class="ja">一覧から選ぶ</span><span class="en">Index of all screens</span></dd>
       <dt>Z</dt><dd><span class="ja">絵を拡大して細部を見る</span><span class="en">Zoom into a painting</span></dd>
-      <dt><span class="ja">年表の点</span><span class="en">Timeline dots</span></dt><dd><span class="ja">カーソルを当てると出来事が出る</span><span class="en">Hover for the event</span></dd>
       <dt>L</dt><dd><span class="ja">日本語 ／ English</span><span class="en">日本語 / English</span></dd>
-      <dt>T</dt><dd><span class="ja">1万両の換算を切替</span><span class="en">Switch the yen conversion</span></dd>
+      <dt><span class="ja">絵</span><span class="en">Paintings</span></dt><dd><span class="ja">クリックで大きく見る</span><span class="en">Click to enlarge</span></dd>
       <dt>F</dt><dd><span class="ja">全画面</span><span class="en">Full screen</span></dd>
       <dt>P</dt><dd><span class="ja">発表者画面（台本・次の画面・タイマー）</span><span class="en">Presenter view (script, next, timer)</span></dd>
       <dt>B</dt><dd><span class="ja">暗転</span><span class="en">Black screen</span></dd>
@@ -326,6 +259,7 @@
   </div>
 </div>
 
+<div id="lb" class="overlay lb" role="dialog" aria-modal="true" aria-label="Image" hidden><figure><img alt=""><figcaption class="lbcap"></figcaption></figure><button type="button" data-act="close" class="x" aria-label="close">×</button></div>
 <script src="js/notes.js"></script>
 <script src="js/japan.js"></script>
 <script src="js/timeline.js"></script>
