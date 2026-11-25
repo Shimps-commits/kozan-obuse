@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>発表者画面</title>
+<style>
+:root{--sumi:#0b0d11;--ai:#2a5ba8;--ai2:#6f9ad8;--shu:#d8452f;--ink:#ffffff;--dim:rgba(255,255,255,.55)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#07080b;color:var(--ink);font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic UI","Meiryo",sans-serif;overflow:hidden}
+body{display:grid;grid-template-rows:auto 1fr auto;height:100vh}
+header{display:flex;align-items:center;gap:2.4vw;padding:1.4vh 2vw;border-bottom:1px solid #1b2130;font-size:2.1vh;font-weight:400}
+#pos b{font-size:3.4vh;font-weight:600}
+#build{color:var(--dim)}
+#lang{margin-left:auto;padding:.2em .7em;border:1px solid #2b3446;border-radius:999px;color:var(--ai2);cursor:pointer}
+#timer{display:flex;align-items:center;gap:1vw;cursor:pointer}
+#tm{font-size:4.2vh;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+#tm.over{color:var(--shu)}
+.tgt{color:var(--dim)}
+.bar{width:14vw;height:6px;border-radius:3px;background:#1b2130;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ai2)}
+.bar i.over{background:var(--shu)}
+main{display:grid;grid-template-columns:1fr minmax(320px,38vw);gap:2.4vw;padding:2.4vh 2vw;min-height:0}
+#notes{overflow:auto;padding-right:1vw}
+#cue{color:var(--ai2);font-size:2.2vh;margin:0 0 2vh;min-height:1em}
+#note{font-size:3.6vh;line-height:1.7;margin:0;white-space:pre-wrap;font-weight:400}
+#note2{font-size:2.1vh;line-height:1.7;margin:3vh 0 0;color:var(--dim);white-space:pre-wrap}
+aside{display:flex;flex-direction:column;gap:1vh;min-height:0}
+.lbl{font-size:1.6vh;letter-spacing:.2em;color:var(--dim)}
+.th{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden;border-radius:4px;outline:1px solid #1b2130}
+.th iframe{position:absolute;left:0;top:0;width:1920px;height:1080px;border:0;transform-origin:0 0;pointer-events:none}
+#nextInfo{font-size:1.8vh;color:var(--dim);min-height:1.4em}
+footer{padding:1vh 2vw;font-size:1.6vh;color:var(--dim);border-top:1px solid #1b2130}
+#warn{color:var(--shu)}
+</style>
+</head>
+<body>
+<header>
+  <div id="pos"><b>–</b> / –</div>
+  <div id="build"></div>
+  <div id="timer" title="クリックでリセット"><span id="tm">00:00</span><span class="tgt">/ 20:00</span><div class="bar"><i id="bar"></i></div></div>
+  <div id="lang" title="L">JA</div>
+</header>
+<main>
+  <section id="notes"><p id="cue"></p><p id="note"></p><p id="note2"></p></section>
+  <aside>
+    <div class="lbl">NOW</div>
+    <div class="th" id="thNow"><iframe id="now" tabindex="-1"></iframe></div>
+    <div class="lbl">NEXT</div>
+    <div class="th" id="thNext"><iframe id="nxt" tabindex="-1"></iframe></div>
+    <div id="nextInfo"></div>
+  </aside>
+</main>
+<footer><span id="warn"></span> → / Space 次　← 前　Home / End　L 日英　T 米／そば　B 暗転　タイマーはクリックでリセット</footer>
+<script src="js/notes.js"></script>
+<script>
+(function(){
+  'use strict';
+  var NOTES = window.KOZAN_NOTES || {};
+  var chan = null; try { chan = new BroadcastChannel('kozan-deck'); } catch (e) {}
+  var S = null, lastSrc = {}, t0 = Date.now(), n = 0;
+
+  function send(m){
+    m.mid = Date.now() + '-' + Math.random().toString(36).slice(2) + '-' + (n++);
+    if (chan) try { chan.postMessage(m); } catch (e) {}
+    if (window.opener && !window.opener.closed) try { window.opener.postMessage(m, '*'); } catch (e) {}
+  }
+  function cmd(c){ send({ type:'cmd', cmd:c }); }
+
+  function setSrc(el, key, src){
+    if (lastSrc[key] === src) return;
+    var base = lastSrc[key] ? lastSrc[key].split('#')[0] : '';
+    if (base === src.split('#')[0] && el.contentWindow) {
+      try { el.contentWindow.location.hash = src.split('#')[1]; lastSrc[key] = src; return; } catch (e) {}
+    }
+    el.src = src; lastSrc[key] = src;
+  }
+  function scaleThumbs(){
+    ['thNow','thNext'].forEach(function(id){
+      var box = document.getElementById(id), f = box.querySelector('iframe');
+      f.style.transform = 'scale(' + (box.clientWidth / 1920) + ')';
+    });
+  }
+
+  function render(){
+    if (!S) return;
+    var id = S.ids[S.i], o = NOTES[id] || {}, other = S.lang === 'ja' ? 'en' : 'ja';
+    document.documentElement.lang = S.lang;
+    document.getElementById('pos').innerHTML = '<b>' + (S.i + 1) + '</b> / ' + S.n;
+    document.getElementById('build').textContent = S.steps[S.i] ? ('ビルド ' + S.step + ' / ' + S.steps[S.i]) : '';
+    document.getElementById('lang').textContent = S.lang.toUpperCase();
+    document.getElementById('cue').textContent = o.cue ? o.cue[S.lang] : '';
+    document.getElementById('note').textContent = o[S.lang] || '';
+    document.getElementById('note2').textContent = o[other] || '';
+    var q = 'index.html?thumb&snap&lang=' + S.lang;
+    setSrc(document.getElementById('now'), 'now', q + '#' + (S.i + 1) + '.' + S.step);
+    var hasNext = S.i < S.n - 1;
+    var remaining = S.steps[S.i] - S.step;
+    setSrc(document.getElementById('nxt'), 'nxt', q + '#' + (hasNext ? (S.i + 2) + '.e' : (S.i + 1) + '.e'));
+    document.getElementById('nextInfo').textContent =
+      (remaining > 0 ? ('この画面にあと ' + remaining + ' ビルド　') : '') + (hasNext ? '' : '最後の画面です');
+    document.getElementById('warn').textContent = '';
+  }
+
+  function onState(d){
+    if (!d || d.type !== 'state') return;
+    S = d; render();
+  }
+  if (chan) chan.onmessage = function(e){ onState(e.data); };
+  window.addEventListener('message', function(e){ onState(e.data); });
+
+  document.addEventListener('keydown', function(e){
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === ' ' || k === 'PageDown' || k === 'ArrowDown' || k === 'Enter') { e.preventDefault(); cmd('next'); }
+    else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'ArrowUp' || k === 'Backspace') { e.preventDefault(); cmd('prev'); }
+    else if (k === 'Home') { e.preventDefault(); cmd('home'); }
+    else if (k === 'End') { e.preventDefault(); cmd('end'); }
+    else if (k === 'l' || k === 'L') cmd('lang');
+    else if (k === 't' || k === 'T') cmd('toggle');
+    else if (k === 'b' || k === 'B' || k === '.') cmd('black');
+  });
+  document.getElementById('lang').addEventListener('click', function(){ cmd('lang'); });
+  document.getElementById('timer').addEventListener('click', function(){ t0 = Date.now(); tick(); });
+
+  function tick(){
+    var s = Math.floor((Date.now() - t0) / 1000), tgt = 20 * 60;
+    var el = document.getElementById('tm'), bar = document.getElementById('bar');
+    el.textContent = String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+    el.classList.toggle('over', s > tgt);
+    bar.style.width = Math.min(100, s / tgt * 100) + '%';
+    bar.classList.toggle('over', s > tgt);
+  }
+  setInterval(tick, 500); tick();
+  window.addEventListener('resize', scaleThumbs); scaleThumbs();
+
+  send({ type:'hello' });
+  setTimeout(function(){
+    if (!S) document.getElementById('warn').textContent = '投影画面と未接続です。index.html で P キーを押して開いてください。';
+  }, 1500);
+})();
+</script>
+</body>
+</html>
