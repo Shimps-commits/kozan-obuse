@@ -344,3 +344,123 @@ html.art:not(.inspect) .slide.active .fit{cursor:zoom-in}
   .overlay,.ov-card{transition:opacity .3s!important;transform:none!important}
   html.hint #hint{animation:none}
 }
+
+/* =================================================================
+   第2回 再設計：地図・年表・作品名パネル
+   ================================================================= */
+.sub.big{font-size:calc(var(--u)*4.2);color:#fff}
+.sub.top{position:absolute;left:0;right:0;top:calc(var(--u)*9);text-align:center}
+.sub.bottom{position:absolute;left:0;right:0;bottom:calc(var(--u)*12);text-align:center;color:#fff}
+.swap{display:grid;place-items:center}
+.swap>*{grid-area:1/1}
+
+/* 掲載許可が出た画像を差し込む枠（ファイルがなければ何も出ない） */
+.slot{position:absolute;inset:0;background-position:center;background-size:cover;opacity:0;transition:opacity 1.2s}
+.slot.has{opacity:1}
+.slot.dim.has{filter:brightness(.28) saturate(.85)}
+
+/* 作品名と年齢（画像なし） */
+.two{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12vw}
+.work{position:relative;display:flex;flex-direction:column;align-items:center;gap:calc(var(--u)*1.6);text-align:center;padding:calc(var(--u)*4)}
+.work .slot{inset:calc(var(--u)*-6);border-radius:4px}
+.work .slot.has{filter:brightness(.35)}
+.work>*:not(.slot){position:relative}
+.wname{font-size:calc(var(--u)*4.6);color:#fff}
+.three{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:9vw;text-align:center}
+.three .sub{margin-top:calc(var(--u)*1)}
+.stack{position:absolute;inset:0 0 calc(var(--u)*14);display:grid;place-items:center;text-align:center}
+.stack>.it{grid-area:1/1;display:flex;flex-direction:column;align-items:center;gap:calc(var(--u)*2)}
+.corner{position:absolute;left:6vw;top:calc(var(--u)*9);text-align:left;z-index:2}
+.corner .sub{color:#fff}
+
+/* 日本地図 */
+.mapbox{position:absolute;inset:0}
+.mapbox svg{position:absolute;inset:0;width:100%;height:100%}
+.jp-land{fill:#121a27;stroke:rgba(111,154,216,.38);stroke-width:1.4;stroke-linejoin:round}
+.jp .ln{fill:none;stroke:var(--ai2);stroke-width:4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.2s var(--ease) var(--d,0s),opacity .6s}
+.jp .ln.vis{stroke-dashoffset:0}
+.jp .ln.river{stroke:#4f9be8;stroke-width:7;opacity:.85}
+.jp .ln.home{stroke:#fff;stroke-width:3;opacity:.7}
+.jp-dot{fill:#fff}
+.jp-home{fill:#fff}
+.jp-pulse{fill:var(--ai2);transform-box:fill-box;transform-origin:center}
+.slide.active .jp-pulse{animation:pulse 2.8s ease-out infinite}
+.jp-city text{fill:#fff;font-family:"ShipporiX",serif;font-weight:800;font-size:68px}
+.jp-obuse text{fill:#fff;font-family:"ShipporiX",serif;font-weight:800;font-size:50px}
+.jp-note text{fill:#8fc0f0;font-family:"NotoX",sans-serif;font-weight:400;font-size:36px;letter-spacing:.06em}
+.jp-yr text{fill:var(--ai2);font-family:"ShipporiX",serif;font-weight:800;font-size:46px}
+.jp-yr.home text{fill:#fff}
+
+/* 年表 */
+.tlx{position:absolute;z-index:1}
+.tlx svg{width:100%;height:100%;display:block;overflow:visible}
+.tl-full{left:2vw;right:2vw;top:calc(var(--u)*17);bottom:calc(var(--u)*7)}
+.tl-mini{left:3vw;right:3vw;bottom:calc(var(--u)*2.5);height:calc(var(--u)*17)}
+.tl-mini.side{left:46vw;right:2vw;bottom:calc(var(--u)*3);height:calc(var(--u)*12)}
+.tl-grid{stroke:rgba(255,255,255,.07);stroke-width:1}
+.tl-year{fill:rgba(255,255,255,.5);font-family:"NotoX",sans-serif;font-weight:300;font-size:24px}
+.tl-mini .tl-year{font-size:28px}
+.tl-lane text{fill:#fff;font-family:"ShipporiX",serif;font-weight:800;font-size:32px}
+.tl-mini .tl-lane text{font-size:36px}
+.tl-life{stroke-linecap:round;stroke-width:4}
+.tl-life.k{stroke:rgba(255,255,255,.55)}
+.tl-life.h{stroke:rgba(111,154,216,.55)}
+.tl-link{stroke:rgba(255,255,255,.35);stroke-dasharray:5 8;stroke-width:2}
+.tl-hl{fill:rgba(42,91,168,.2);stroke:rgba(111,154,216,.6);stroke-width:1.5}
+.tl-ev{cursor:pointer;transition:opacity .6s}
+.tl-hit{fill:transparent}
+.tl-dot{transform-box:fill-box;transform-origin:center;transition:transform .5s var(--ease)}
+.tl-ev:hover .tl-dot{transform:scale(1.6)}
+.tl-ev.off{opacity:.22}
+.tl-ev.focus .tl-dot{transform:scale(1.9)}
+.slide.active .tl-ev.focus .tl-dot{animation:tlp 1.6s ease-in-out infinite}
+@keyframes tlp{50%{transform:scale(2.3)}}
+.tl-age text{fill:#fff;font-family:"ShipporiX",serif;font-weight:800;font-size:34px}
+.tl-age.h text{fill:var(--ai2)}
+.tl-leg text{fill:#fff;font-family:"NotoX",sans-serif;font-weight:300;font-size:28px}
+.tl-tip{position:absolute;left:0;top:0;transform:translate(-50%,calc(-100% - 18px));pointer-events:none;z-index:5;
+  background:rgba(11,13,17,.96);border:1px solid rgba(111,154,216,.5);border-radius:8px;padding:.7em .95em;
+  font-size:max(calc(var(--u)*1.9),13px);line-height:1.55;color:#fff;width:max-content;max-width:min(34em,80vw);opacity:0;transition:opacity .2s}
+.tl-tip.on{opacity:1}
+.tl-tip b{display:block;color:var(--ai2);font-family:"ShipporiX",serif;font-weight:800;margin-bottom:.2em}
+/* 全体年表のビルド：→ で鴻山 → 北斎 */
+.slide[data-id="timeline"] .tl-ev,.slide[data-id="timeline"] .tl-age,.slide[data-id="timeline"] .tl-leg,.slide[data-id="timeline"] .tl-leg+*{opacity:0;transition:opacity .6s ease calc(var(--i,0)*45ms)}
+.slide[data-id="timeline"].s1 .tl-ev.k,.slide[data-id="timeline"].s1 .tl-age:not(.h),.slide[data-id="timeline"].s1 .tl-leg{opacity:1}
+.slide[data-id="timeline"].s2 .tl-ev.h,.slide[data-id="timeline"].s2 .tl-age.h{opacity:1}
+.slide[data-id="timeline"] svg>circle{opacity:0;transition:opacity .6s}
+.slide[data-id="timeline"].s1 svg>circle{opacity:1}
+
+/* この2日間（1日目／2日目） */
+.dayrows{position:absolute;left:7vw;right:7vw;top:33%;display:flex;flex-direction:column;gap:calc(var(--u)*6)}
+.dayrow{display:flex;align-items:flex-start;gap:2vw}
+.dayrow .dl{flex:0 0 9vw;font-size:calc(var(--u)*2.6);color:var(--dim);letter-spacing:.12em;padding-top:calc(var(--u)*.6)}
+.dayrows .pt{position:relative;left:auto;top:auto;flex:0 1 17vw;display:flex;flex-direction:column;align-items:center;gap:calc(var(--u)*1.8);cursor:pointer}
+.dayrows .pt .dot{position:relative;left:auto;top:auto;display:block;transform:scale(0)}
+.slide.active .dayrows .pt .dot{transform:scale(1)}
+.slide.active .dayrows .pt.now .dot{transform:scale(1.9)}
+.dayrows .pl,.dayrows .pl.bd,.dayrows .pl.bd.vis{position:static;transform:none;font-family:"NotoX",sans-serif;font-weight:400;font-size:calc(var(--u)*2.7);color:rgba(255,255,255,.55);white-space:nowrap;text-align:center;transition:color .4s}
+.dayrows .pt.seen .pl{color:rgba(255,255,255,.8)}
+.dayrows .pt.now .pl{color:#fff;font-family:"ShipporiX",serif;font-weight:800}
+.slide[data-id="days"] .q{top:74%}
+.slide[data-id="days"] .days-t{top:calc(var(--u)*10)}
+
+@media (orientation: portrait){
+  .two{flex-direction:column;gap:calc(var(--u)*14)}
+  .three{flex-direction:column;gap:calc(var(--u)*7)}
+  .corner{left:6vw;right:6vw}
+  .tl-mini,.tl-mini.side{left:3vw;right:3vw;bottom:calc(var(--u)*22);height:calc(var(--u)*20)}
+  .tl-full{top:calc(var(--u)*30);bottom:calc(var(--u)*30)}
+  .dayrows{top:24%;left:5vw;right:5vw;gap:calc(var(--u)*8)}
+  .dayrow{flex-wrap:wrap;gap:calc(var(--u)*4) 2vw}
+  .dayrow .dl{flex:0 0 100%}
+  .dayrows .pt{flex:0 1 20vw}
+  .dayrows .pl{font-size:max(calc(var(--u)*2.7),11px);white-space:normal}
+  .slide[data-id="days"] .q{top:70%}
+  .sub.big{font-size:max(calc(var(--u)*4.2),15px)}
+}
+@media (prefers-reduced-motion: reduce){
+  .jp .ln{stroke-dashoffset:0;opacity:0;transition:opacity 1s}
+  .jp .ln.vis{opacity:1}
+  .slide.active .tl-ev.focus .tl-dot{animation:none}
+  .slide.active .dayrows .pt .dot,.slide.active .dayrows .pt.now .dot{transform:none}
+}

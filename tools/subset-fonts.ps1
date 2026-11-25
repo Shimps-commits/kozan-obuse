@@ -3,7 +3,7 @@
 #   powershell -ExecutionPolicy Bypass -File tools\subset-fonts.ps1
 $ErrorActionPreference = 'Stop'
 $root = Split-Path $PSScriptRoot -Parent
-$src = 'index.html', 'js\deck.js', 'js\ui.js' | ForEach-Object { [IO.File]::ReadAllText((Join-Path $root $_)) }
+$src = 'index.html', 'js\deck.js', 'js\ui.js', 'js\timeline.js' | ForEach-Object { [IO.File]::ReadAllText((Join-Path $root $_)) }
 $set = New-Object 'System.Collections.Generic.SortedSet[string]'
 foreach ($t in $src) {
   $e = [Globalization.StringInfo]::GetTextElementEnumerator($t)

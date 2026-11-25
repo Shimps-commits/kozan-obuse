@@ -24,7 +24,7 @@
   try { if ('BroadcastChannel' in window && MODE === 'main') chan = new BroadcastChannel('kozan-deck'); } catch (e) {}
   var presenter = null;
   var seen = {};
-  var costMode = 'rice';
+  var costMode = 'range';
 
   /* ---------- 文字を一字（英語は一語）ずつに分ける ---------- */
   function splitReveal() {
@@ -126,17 +126,9 @@
       if (st === 0) { count(c, 0, false); c.dataset.from = 0; return; }
       count(c, 10000, o.fwd, 2600, 250);
     },
-    study: function (s, st, o) {
-      var c = s.querySelector('.cnt');
-      if (st === 0) { c.textContent = '15'; return; }
-      count(c, 31, o.fwd, 1700, 350);
-    },
     market: function (s, st) { s.classList.toggle('lit', st >= 1); },
-    wave: function (s, st) {
-      var sh = s.querySelector('.shizai [data-b]');
-      s.classList.toggle('dim', st >= +sh.dataset.b);
-    },
-    cost: function (s, st) { s.classList.toggle('bust', st >= 3); renderCost(); },
+    timeline: function (s, st) { s.classList.toggle('s1', st >= 1); s.classList.toggle('s2', st >= 2); },
+    cost: function () { renderCost(); },
     days: function (s, st) {
       s.querySelectorAll('.pt').forEach(function (p, k) {
         p.classList.toggle('seen', k + 1 <= st);
@@ -145,16 +137,34 @@
     }
   };
 
+  /* 1万両の換算：知るぽると（江戸中〜後期の米・そば）、明治大学博物館（幕末の米） */
+  var COST = {
+    range: ['約1億〜13億', '0.1–1.3 billion', '換算のしかたで、これだけ変わる', 'It depends on how you count.'],
+    late:  ['約1億', '100 million', '幕末の米価で　1両＝約1万円', '1 ryō ≈ ¥10,000 at 1860s rice prices'],
+    rice:  ['約4億', '400 million', '江戸中〜後期の米価で　1両＝約4万円', '1 ryō ≈ ¥40,000 at earlier rice prices'],
+    soba:  ['約12億〜13億', '1.2–1.3 billion', '江戸中〜後期のそば代で　1両＝12〜13万円', '1 ryō ≈ ¥120,000–130,000 in soba']
+  };
+  var COST_ORDER = ['range', 'late', 'rice', 'soba'];
   function renderCost() {
-    var rice = costMode === 'rice';
     var s = document.querySelector('[data-id="cost"]');
-    s.querySelector('.amt-ja').textContent = rice ? '4億' : '12.5億';
-    s.querySelector('.amt-en').textContent = rice ? '400 million' : '1.25 billion';
-    s.querySelector('.rate-ja').textContent = rice ? '1両＝米で約4万円　江戸中〜後期' : '1両＝そばで約12.5万円　江戸中〜後期';
-    s.querySelector('.rate-en').textContent = rice ? '1 ryō ≈ ¥40,000 in rice · mid–late Edo' : '1 ryō ≈ ¥125,000 in soba · mid–late Edo';
+    if (!s) return;
+    var v = COST[costMode] || COST.range;
+    s.querySelector('.amt-ja').textContent = v[0];
+    s.querySelector('.amt-en').textContent = v[1];
+    s.querySelector('.rate-ja').textContent = v[2];
+    s.querySelector('.rate-en').textContent = v[3];
     s.querySelectorAll('.tg button').forEach(function (b) { b.classList.toggle('on', b.dataset.m === costMode); });
   }
-  function toggleCost() { costMode = costMode === 'rice' ? 'soba' : 'rice'; renderCost(); }
+  function toggleCost() { costMode = COST_ORDER[(COST_ORDER.indexOf(costMode) + 1) % COST_ORDER.length]; renderCost(); }
+
+  /* 掲載許可が出た画像の差し込み枠：ファイルがあれば背景に出す */
+  function probeSlots() {
+    document.querySelectorAll('.slot[data-img]').forEach(function (el) {
+      var im = new Image();
+      im.onload = function () { el.style.backgroundImage = 'url(' + el.dataset.img + ')'; el.classList.add('has'); };
+      im.src = el.dataset.img;
+    });
+  }
 
   function go(n, st, fwd) {
     n = Math.max(0, Math.min(N - 1, n));
@@ -301,6 +311,7 @@
   /* ---------- 神奈川沖浪裏：ファイルがあれば使う ---------- */
   function checkKanagawa() {
     var layer = document.querySelector('[data-kanagawa]');
+    if (!layer) return Promise.resolve(false);
     return new Promise(function (res) {
       var im = new Image();
       im.onload = function () {
@@ -326,6 +337,7 @@
 
   /* ---------- 起動 ---------- */
   buildCal();
+  probeSlots();
   splitReveal();
   checkKanagawa().then(function () {
     initSteps();

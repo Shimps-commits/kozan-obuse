@@ -6,13 +6,15 @@
   if (Q.has('thumb') || Q.has('snap')) return;
 
   var TITLES = {
-    ryo: ['10,000両', '10,000 ryō'], man: ['約束した男', 'The promise'], obuse: ['小布施', 'Obuse'],
-    map: ['三都へ', 'To the three cities'], market: ['六斎市', 'Market days'], kozan: ['高井鴻山', 'Takai Kōzan'],
-    study: ['学ぶ', 'Learning'], kura: ['蔵を開く', 'The storehouses'], age: ['37と83', '37 and 83'],
-    wave: ['私財で', 'Out of his own pocket'], cost: ['1万両の行方', 'The 10,000 ryō'], teach: ['それでも、教えた', 'Still, he taught'],
-    'art-dotozu': ['怒涛図', 'Raging Waves'], 'art-hoo': ['鳳凰', 'Phoenix'], 'art-zo': ['象と唐人図', 'Elephant and Chinese Men'],
-    'art-yokai': ['妖怪図', 'Yōkai'], names: ['旦那様と先生', 'Danna-sama and Sensei'], days: ['この2日間', 'Your two days'],
-    end: ['何を残そうとしたのか', 'What was he trying to leave?']
+    ryo: ['10,000両', '10,000 ryō'], village: ['村に、世界を連れてきた男', 'He brought the world to Obuse'],
+    kozan: ['高井鴻山', 'Takai Kōzan'], waves: ['神奈川沖浪裏・凱風快晴', 'The Great Wave · Red Fuji'],
+    'obuse-hokusai': ['小布施にある北斎', 'Hokusai, still in Obuse'], map: ['人と物と知恵が交わる町', 'Where roads crossed'],
+    market: ['六斎市', 'Market days'], house: ['高井家', 'The Takai house'], grandpa: ['祖父・長救', 'His grandfather'],
+    timeline: ['鴻山と北斎の年表', 'Two lives, side by side'], study: ['16年', '16 years'], kura: ['蔵を開く', 'The storehouses'],
+    age: ['37と83', '37 and 83'], shizai: ['私財で', 'Out of his own pocket'], 'fuji-ryu': ['北斎、90歳', 'Hokusai at 90'],
+    gave: ['差し出した順', 'What he gave'], cost: ['1万両はいくらか', 'What 10,000 ryō means'],
+    depleted: ['資産が底をついた', 'His fortune ran out'], teach: ['それでも、教えた', 'Still, he taught'],
+    days: ['この2日間', 'Your two days'], why: ['なぜ差し出したのか', 'Why give it all?'], journey: ['旅の問い', 'The question to carry']
   };
   var store = {
     get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
@@ -67,7 +69,7 @@
     d.steps.forEach(function (s, k) { total += s + 1; if (k < d.i) done += s + 1; });
     done += d.step + 1;
     $('#prog i').style.width = (done / total * 100) + '%';
-    var art = /^art-/.test(d.id) || d.id === 'wave';
+    var art = d.id === 'waves';
     H.classList.toggle('art', art);
     if (d.entered || !art) setInspect(false);
     markCur();
