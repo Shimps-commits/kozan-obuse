@@ -239,6 +239,23 @@ figure.por-wrap{margin:0;position:relative;width:calc(var(--u)*52);height:calc(v
 .q-gloss{margin:calc(var(--u)*2.4) 0 0;font-size:calc(var(--u)*2.2);line-height:1.7;color:rgba(255,255,255,.8)}
 .meet-end{position:absolute;left:6vw;top:50%;transform:translateY(-50%);z-index:4;text-align:left}
 
+/* ---------- 11 小布施で描いたもの：背景いっぱいに作品 ---------- */
+.late-bg{position:absolute;inset:0;overflow:hidden}
+.bgp{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat}
+.slide.active .late-bg.vis .bgp:not(.blur){animation:bgz 30s linear forwards}
+@keyframes bgz{from{transform:scale(1)}to{transform:scale(1.06)}}
+.bgp.half{right:50%}
+.bgp.half.r{left:50%;right:0;background-position:50% 35%}
+.bgp.blur{inset:-6%;filter:blur(40px) brightness(.5)}
+.bgp.contain{background-size:contain}
+.slide[data-id="late"][data-step="3"] .late-bg{filter:brightness(.35) saturate(.7);transition:filter 2s ease}
+.late-scrim{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(11,13,17,.88) 0%,rgba(11,13,17,.55) 26%,rgba(11,13,17,.1) 42%,rgba(11,13,17,.1) 50%,rgba(11,13,17,.72) 60%,rgba(11,13,17,.92) 100%)}
+.slide[data-id="late"] .works{left:61vw}
+.slide[data-id="late"] .wk-img img{height:calc(var(--u)*22)}
+.slide[data-id="late"] .wk-q .ja{font-size:calc(var(--u)*3.6);white-space:nowrap}
+.slide[data-id="late"] .wk-t,.slide[data-id="late"] .wk-s,.slide[data-id="late"] .odo,.slide[data-id="late"] .hd2,.slide[data-id="late"] .stamp{text-shadow:0 0 calc(var(--u)*2) rgba(11,13,17,.95),0 0 4px rgba(11,13,17,.9)}
+
 /* ---------- 11 小布施で描いたもの ---------- */
 .odo{position:absolute;left:6vw;top:calc(var(--u)*27);z-index:4}
 .odo-n{font-size:calc(var(--u)*24);line-height:1;color:#fff;font-variant-numeric:tabular-nums}
@@ -545,6 +562,12 @@ html.art:not(.inspect) .slide.active .layer.vis .fit,html.art:not(.inspect) .sli
   .pair{gap:calc(var(--u)*34)}
   .pair .who .fs{font-size:calc(var(--u)*22)!important}
   .gap46{top:calc(var(--u)*7);font-size:calc(var(--u)*9)}
+  .slide[data-id="late"] .works{left:6vw}
+  .slide[data-id="late"] .wk-img img{height:calc(var(--u)*18)}
+  .slide[data-id="late"] .wk-q .ja{font-size:calc(var(--u)*5)}
+  .bgp.half{right:0;bottom:50%}
+  .bgp.half.r{left:0;top:50%;bottom:0}
+  .late-scrim{background:linear-gradient(180deg,rgba(11,13,17,.8) 0%,rgba(11,13,17,.35) 30%,rgba(11,13,17,.55) 45%,rgba(11,13,17,.9) 62%,rgba(11,13,17,.95) 100%)}
   .famine-l .fit{left:50%;top:44%}
   .famine-l .cap{left:6vw;right:6vw;max-width:none;text-align:left;top:calc(var(--u)*34);bottom:auto}
   .hoo-l .fit{left:50%}
