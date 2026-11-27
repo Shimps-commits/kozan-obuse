@@ -4,42 +4,38 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>高井鴻山の目で 小布施</title>
-<meta name="description" content="「画狂老人」葛飾北斎を小布施に招いた若者、高井鴻山。Takai Kōzan, the young man who brought Hokusai to Obuse.">
+<meta name="description" content="「画狂老人」葛飾北斎を小布施に招いた若者、高井鴻山。小布施ファムトリップのオリエンテーション。Takai Kōzan, the young man who brought Hokusai to Obuse.">
 <meta name="theme-color" content="#0b0d11">
 <meta property="og:title" content="高井鴻山の目で 小布施 / Obuse through Kōzan’s eyes">
 <meta property="og:description" content="「画狂老人」葛飾北斎を小布施に招いた若者。The young man who brought Hokusai to Obuse.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="thumbs/ja-02.jpg">
+<meta property="og:image" content="thumbs/ja-01.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0d11'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%232a5ba8'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ffffff'/%3E%3C/svg%3E">
-<link rel="preload" href="fonts/shippori-800-subset.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/deck.css">
 </head>
 <body>
 <!--
-  構成（14画面）
-   序  1 10,000両 ／ 2 北斎を招いた若者 ／ 3 高井鴻山
-   一  4 小布施（地図）／ 5 16年（遊学）／ 6 絵にのめり込む ／ 7 蔵を開く
-   二  8 37と83 ／ 9 私財で、ともに描く ／ 10 年表
-   三  11 差し出した順 ／ 12 底をつく → 教える
-   結  13 この2日間 ／ 14 問い
+  構成（19画面・約20分）
+   序      1 タイトル ／ 2 いちばん小さな町 ／ 3 高井鴻山（肖像）
+   一 土地  4 川がつくった土地 ／ 5 米が育たない水 ／ 6 道が交わる市場町 ／ 7 人と物と知恵
+   二 若者  8 16年 ／ 9 蔵を開く
+   三 画狂老人 10 1842年 秋 ／ 11 小布施で描いたもの ／ 12 絵にのめり込む
+   四 お金  13 献金・融資・支援 ／ 14 1866年 1万両
+   五      15 それでも、教えた ／ 16 鴻山の78年
+   終      17 町が受け継いだ ／ 18 この2日間 ／ 19 問い
   操作：→ / Space / クリック＝次　← ＝前　Home / End　L＝日英　F＝全画面　P＝発表者画面　O＝一覧　B＝暗転
   ビルド：data-b="n" はステップ n から表示、data-x="n" はステップ n で消える
 -->
 <div id="deck">
 
-<!-- 1 -->
-<section class="slide" data-id="ryo">
-  <div class="c">
-    <div class="m fs nw bd fade" data-b="1" style="--fs:34"><span class="cnt" data-from="0" data-to="10000">0</span><span class="u ja">両</span><span class="u en"> ryō</span></div>
-  </div>
-</section>
-
-<!-- 2 -->
-<section class="slide" data-id="young">
+<!-- 1 タイトル -->
+<section class="slide" data-id="title">
   <div class="layer">
     <div class="backdrop" style="background-image:url(img/kanagawa.jpg)"></div>
     <img class="fit kb dimimg" src="img/kanagawa.jpg" data-k="2.2" data-mode="cover" alt="">
   </div>
+  <p class="stamp top-l"><span class="ja">小布施ファムトリップ　2026年12月9日–10日</span><span class="en">Obuse FAM trip · 9–10 December 2026</span></p>
   <div class="c shade">
     <h1 class="m fs rv" style="--fs:10.5;line-height:1.3"><span class="ja">「画狂老人」葛飾北斎を<br>小布施に招いた若者</span><span class="en" style="font-size:.92em">The young man who<br>brought Hokusai to Obuse</span></h1>
     <p class="sub big rv en-only" style="--d:1.6s"><span class="en">Hokusai called himself “the old man mad about painting.”</span></p>
@@ -47,15 +43,32 @@
   <p class="cap"><span class="ja">葛飾北斎『冨嶽三十六景 神奈川沖浪裏』1831年頃</span><span class="en">Hokusai, “The Great Wave,” c. 1831</span></p>
 </section>
 
-<!-- 3 -->
+<!-- 2 いちばん小さな町 -->
+<section class="slide" data-id="small">
+  <div class="mapbox" data-map="where"></div>
+  <div class="scrim-l"></div>
+  <div class="lead">
+    <h2 class="m fs rv" style="--fs:8.4"><span class="ja">長野県で<br>いちばん小さな町</span><span class="en">Nagano’s<br>smallest town</span></h2>
+    <div class="stats">
+      <div class="st bd" data-b="1"><b class="m">19.12<small>km²</small></b><span class="ja">面積</span><span class="en">in area</span></div>
+      <div class="st bd" data-b="2"><b class="m"><span class="ja">約1万<small>人</small></span><span class="en"><small>about </small>10,000</span></b><span class="ja">人口</span><span class="en">people</span></div>
+      <div class="st bd" data-b="3"><b class="m"><span class="ja">約100万<small>人</small></span><span class="en"><small>about </small>1 million</span></b><span class="ja">1年に訪れる人</span><span class="en">visitors a year</span></div>
+    </div>
+    <p class="ask-q bd" data-b="4"><span class="ja">なぜ、この小さな町に。</span><span class="en">Why this small town?</span></p>
+  </div>
+</section>
+
+<!-- 3 高井鴻山 -->
 <section class="slide" data-id="kozan">
+  <p class="kicker rv"><span class="ja">たどっていくと、ひとりの若者に行き着く。</span><span class="en">Trace it back, and you find one young man.</span></p>
   <div class="c row">
     <div class="kz-name">
-      <h1 class="m fs rv" style="--fs:15"><span class="ja">高井鴻山</span><span class="en" style="font-size:.78em">Takai<br>Kōzan</span></h1>
+      <h1 class="m fs rv" style="--fs:14;--d:.6s"><span class="ja">高井鴻山</span><span class="en" style="font-size:.78em">Takai<br>Kōzan</span></h1>
       <p class="m ai2 yrs2">1806–1883</p>
       <div class="swap left">
-        <p class="sub big bd" data-x="1"><span class="ja">「我は吾が様に依る」</span><span class="en">“I go by my own way.”</span></p>
-        <p class="sub big bd" data-b="1"><span class="ja">遊び人で、探求心のかたまり</span><span class="en">A playboy, endlessly curious.</span></p>
+        <p class="sub big bd" data-x="1"><span class="ja">「我は吾が様に依る」</span><span class="en">“I go by my own way.”</span><small class="note"><span class="ja">鴻山の印にある言葉</span><span class="en">words on one of his seals</span></small></p>
+        <p class="sub big bd" data-b="1" data-x="2"><span class="ja">遊び人で、探求心のかたまり</span><span class="en">A playboy, endlessly curious.</span></p>
+        <p class="sub big bd" data-b="2"><span class="ja">彼を知るには、まず、この町から。</span><span class="en">To know him, begin with the town.</span></p>
       </div>
     </div>
     <figure class="por-wrap zoomable" data-cap-ja="高井鴻山像（横山上龍筆）" data-cap-en="Portrait of Takai Kōzan, by Yokoyama Jōryū">
@@ -65,144 +78,341 @@
   </div>
 </section>
 
-<!-- 4 -->
-<section class="slide" data-id="map">
+<!-- 4 川がつくった土地 -->
+<section class="slide" data-id="land">
+  <div class="terra" data-crop="wide" data-focus="138.317,36.6948" data-tx=".6" data-ty=".48" data-zoom="1.12">
+    <img class="t-img" src="img/terrain-wide.jpg" alt="">
+    <img class="t-img bd fade slow" data-b="1" src="img/terrain-wide-fan.jpg" alt="">
+    <svg class="t-svg">
+      <g data-draw="river:chikuma"></g>
+      <g data-draw="river:shinoi"></g>
+      <g class="t-mk" data-draw="river:matsukawa"></g>
+      <g data-draw="label:chikuma"></g>
+      <g data-draw="label:matsukawa"></g>
+      <g data-draw="peak:kariya"></g>
+      <g data-draw="poi:zenkoji"></g>
+      <g class="bd fade" data-b="1" data-draw="apex"></g>
+      <g class="bd fade" data-b="2" data-draw="boundary"></g>
+    </svg>
+  </div>
+  <div class="scrim-l"></div>
+  <p class="chap"><span class="ja">第一章　土地</span><span class="en">I · The land</span></p>
+  <h2 class="m fs hd rv" style="--fs:8"><span class="ja">川がつくった土地</span><span class="en">Land made<br>by a river</span></h2>
+  <div class="nar">
+    <p class="nb bd" data-x="1"><span class="ja">東に雁田山、西に千曲川。</span><span class="en">Mt Kariya to the east, the Chikuma River to the west.</span></p>
+    <p class="nb bd" data-b="1" data-x="2"><span class="ja">松川が氾濫をくり返し、山の砂と石を<br>扇の形に広げた。扇状地である。</span><span class="en">The Matsukawa flooded again and again, spreading sand and stone from the mountains into a fan.</span></p>
+    <p class="nb bd" data-b="2" data-x="3"><span class="ja">町は、この扇の上にある。<br>面積19.12km²。</span><span class="en">The town sits on that fan: 19.12 km².</span></p>
+    <p class="nb bd" data-b="3"><span class="ja">人がいた跡は、約1万年前の石器にさかのぼる。</span><span class="en">Stone tools show people here some 10,000 years ago.</span><small class="src"><span class="ja">雁田山のふもとの遺跡から（町の資料）</span><span class="en">From a site at the foot of Mt Kariya (town records)</span></small></p>
+  </div>
+  <p class="credit"><span class="ja">地形：国土地理院の標高タイルを加工　川・町境：© OpenStreetMap contributors</span><span class="en">Terrain: GSI elevation tiles, processed · Rivers, boundary: © OpenStreetMap contributors</span></p>
+</section>
+
+<!-- 5 米が育たない水 -->
+<section class="slide" data-id="kuri">
+  <div class="terra" data-crop="town" data-focus="138.326,36.6885" data-tx=".64" data-ty=".5" data-zoom="1.15">
+    <img class="t-img" src="img/terrain-town.jpg" alt="">
+    <img class="t-img bd fade slow" data-b="1" src="img/terrain-town-fan.jpg" alt="">
+    <svg class="t-svg">
+      <g data-draw="river:chikuma"></g>
+      <g data-draw="river:shinoi"></g>
+      <g class="t-mk hot" data-draw="river:matsukawa"></g>
+      <g data-draw="upstream"></g>
+      <g data-draw="poi:center"></g>
+      <g class="bd fade" data-b="1" data-draw="label:fan"></g>
+    </svg>
+  </div>
+  <div class="scrim-l"></div>
+  <div class="hd swap left">
+    <h2 class="m fs bd" data-x="2" style="--fs:8"><span class="ja">米が育たない水</span><span class="en">Water too<br>sour for rice</span></h2>
+    <h2 class="m fs bd" data-b="2" style="--fs:9"><span class="ja">だから、栗。</span><span class="en">So: chestnuts.</span></h2>
+  </div>
+  <div class="nar">
+    <p class="nb bd" data-x="1"><span class="ja">松川の上流は、草津白根山に近い、<br>かつて硫黄を掘った山。水は酸性が強く、<br>田んぼには向かなかった。</span><span class="en">The Matsukawa rises near Kusatsu-Shirane, where sulphur was once mined. Its water was too acidic for rice paddies.</span></p>
+    <p class="nb bd" data-b="1" data-x="2"><span class="ja">扇状地は砂と石の土で、水はけがよい。<br>栗がよく育った。</span><span class="en">The fan is sand and gravel and drains fast. Chestnuts did well.</span></p>
+    <p class="nb bd" data-b="2" data-x="3"><span class="ja">江戸時代、栗林は藩の「御林」として守られ、<br>栗は将軍家に献上された。</span><span class="en">In the Edo period the groves were guarded as domain forest, and the chestnuts went to the shogun.</span></p>
+    <p class="nb bd" data-b="3" data-x="4"><span class="tag"><span class="ja">伝承</span><span class="en">Legend</span></span><span class="ja">室町時代、領主の荻野常倫が<br>故郷の丹波から栗を取り寄せたのが始まり、と伝わる。</span><span class="en">A 15th-century lord, Ogino Tsunetomo, is said to have brought chestnuts from his home province, Tamba.</span></p>
+    <p class="nb bd" data-b="4"><span class="ja">1808年、栗の粉で作る菓子「栗落雁」が生まれる。<br>小布施の栗菓子の始まり。</span><span class="en">1808: kuri-rakugan, a sweet made from chestnut flour — the first of Obuse’s chestnut sweets.</span><span class="pin"><span class="ja">1日目　栗菓子工場</span><span class="en">Day 1 · chestnut sweets</span></span></p>
+  </div>
+  <p class="credit"><span class="ja">地形：国土地理院の標高タイルを加工　川：© OpenStreetMap contributors</span><span class="en">Terrain: GSI elevation tiles, processed · Rivers: © OpenStreetMap contributors</span></p>
+</section>
+
+<!-- 6 道が交わる市場町 -->
+<section class="slide" data-id="ichi">
+  <div class="terra" data-crop="town" data-focus="138.321,36.6925" data-tx=".63" data-ty=".52" data-zoom="1.15">
+    <img class="t-img" src="img/terrain-town.jpg" alt="">
+    <svg class="t-svg">
+      <g data-draw="river:chikuma"></g>
+      <g data-draw="river:shinoi"></g>
+      <g class="t-mk bd fade" data-b="1" data-draw="river:matsukawa"></g>
+      <g class="bd fade" data-x="1" data-draw="old"></g>
+      <g class="bd fade" data-b="1" data-draw="levee"></g>
+      <g class="bd fade" data-b="2" data-draw="road"></g>
+      <g data-draw="poi:center"></g>
+      <g data-draw="poi:gansho"></g>
+    </svg>
+  </div>
+  <div class="scrim-l"></div>
+  <h2 class="m fs hd rv" style="--fs:8"><span class="ja">道が交わる<br>市場町</span><span class="en">A market<br>where roads met</span></h2>
+  <div class="cal38 bd" data-b="3"><div class="cal" id="cal"></div><p class="sub"><span class="ja">3と8の付く日　月に6回</span><span class="en">Every date ending in 3 or 8: six a month</span></p></div>
+  <div class="nar">
+    <p class="nb bd" data-x="1"><span class="ja">暴れ川の松川は、かつて町の真ん中を流れていた。</span><span class="en">The Matsukawa, a wild river, once ran through the middle of town.</span></p>
+    <p class="nb bd" data-b="1" data-x="2"><span class="ja">江戸の初め、町の南東に「千両堤」が築かれ、<br>流れが変わった。洪水は大きく減った。</span><span class="en">In the early 1600s a levee, the Senryō-zutsumi, turned it aside. Floods fell sharply.</span><span class="tagline"><span class="tag"><span class="ja">伝承</span><span class="en">Legend</span></span><span class="ja">福島正則が築いたと伝わる。正則の霊廟は岩松院にある</span><span class="en">It is credited to the warlord Fukushima Masanori, whose mausoleum is at Ganshō-in</span></span><span class="pin"><span class="ja">2日目　岩松院</span><span class="en">Day 2 · Ganshō-in</span></span></p>
+    <p class="nb bd" data-b="2" data-x="3"><span class="ja">17世紀の初め、街道に沿って上町・中町・横町などの町並みができた。<br>越後と関東を結ぶ道の、結び目だった。</span><span class="en">Early in the 1600s, streets grew up along the highway — a knot in the roads between Echigo and the Kantō.</span></p>
+    <p class="nb bd" data-b="3" data-x="4"><span class="ja">1640年代、3と8の付く日に市が立つ。<br>月に6回の「六斎市」。</span><span class="en">From the 1640s, a market on every date ending in 3 or 8 — six a month.</span></p>
+    <p class="nb bd" data-b="4"><span class="ja">18世紀の後半には、北信濃でいちばん大きな市と言われた。</span><span class="en">By the late 1700s it was said to be the biggest market in northern Shinano.</span></p>
+  </div>
+  <p class="credit"><span class="ja">かつての流れ・千両堤・街道の線は模式図　地形：国土地理院の標高タイルを加工　川：© OpenStreetMap contributors</span><span class="en">Old course, levee and road are schematic · Terrain: GSI, processed · Rivers: © OpenStreetMap contributors</span></p>
+</section>
+
+<!-- 7 人と物と知恵 -->
+<section class="slide" data-id="tomi">
   <div class="mapbox" data-map="trade"></div>
-  <div class="corner">
-    <div class="m fs nw" style="--fs:13"><span class="ja">小布施</span><span class="en">Obuse</span></div>
-    <p class="sub"><span class="ja">街道が交わる市場町</span><span class="en">A market town where roads met.</span></p>
+  <div class="scrim-l"></div>
+  <h2 class="m fs hd rv" style="--fs:7.6"><span class="ja">人と物と知恵が<br>交わる町</span><span class="en">Where goods, people<br>and ideas met</span></h2>
+  <div class="nar right">
+    <p class="nb bd" data-x="1"><span class="ja">江戸の後期、千曲川に舟が通い、<br>市はさらに栄えた。</span><span class="en">In the late Edo period boats ran on the Chikuma, and the market grew.</span></p>
+    <p class="nb bd" data-b="1" data-x="2"><span class="ja">菜種油、木綿、穀物、塩、酒。<br>豪農・豪商が育った。</span><span class="en">Rapeseed oil, cotton, grain, salt, sake — and rich farmer-merchants.</span><span class="pin"><span class="ja">1日目　酒蔵</span><span class="en">Day 1 · sake brewery</span></span></p>
+    <p class="nb bd" data-b="2" data-x="3"><span class="ja">上町の高井家は、酒・穀物・塩・茶を商い、<br>京の公家・九條家の御用も務めた。<br>近くの藩には、お金を貸した。</span><span class="en">The Takai house traded sake, grain, salt and tea, served the Kujō court family in Kyoto, and lent money to nearby domains.</span></p>
+    <p class="nb bd" data-b="3" data-x="4"><span class="ja">富のあるところに、文人が来た。<br>俳人の小林一茶は、小布施のあたりに239泊している。</span><span class="en">Where there was money, writers came. The haiku poet Issa spent 239 nights in and around Obuse.</span><span class="pin"><span class="ja">2日目　岩松院（一茶の句碑）</span><span class="en">Day 2 · Ganshō-in (Issa’s frog pond)</span></span></p>
+    <p class="nb big bd" data-b="4"><span class="ja">1806年3月、その高井家に<br>男の子が生まれる。</span><span class="en">In March 1806, a boy was born into the Takai house.</span></p>
   </div>
 </section>
 
-<!-- 5 -->
+<!-- 8 16年 -->
 <section class="slide" data-id="study">
   <div class="mapbox" data-map="study"></div>
-  <div class="corner">
-    <div class="m fs nw" style="--fs:24">16<span class="u ja">年</span><span class="u en"> years</span></div>
-    <p class="sub"><span class="ja">15歳から31歳　京都と江戸で学ぶ</span><span class="en">From 15 to 31, in Kyoto and Edo.</span></p>
+  <div class="scrim-l"></div>
+  <p class="chap"><span class="ja">第二章　若者</span><span class="en">II · The young man</span></p>
+  <div class="hd">
+    <div class="m fs nw" style="--fs:20">16<span class="u ja">年</span><span class="u en"> years</span></div>
+    <p class="sub"><span class="ja">15歳から31歳　京都と江戸で学ぶ</span><span class="en">From 15 to 31, in Kyoto and Edo</span></p>
+  </div>
+  <div class="nar">
+    <p class="nb bd" data-b="1" data-x="2"><span class="ja">1820年、15歳で京都へ。<br>書・絵・和歌・儒学を学ぶ。</span><span class="en">1820, at 15: to Kyoto, for calligraphy, painting, poetry and Confucian learning.</span></p>
+    <p class="nb bd" data-b="2" data-x="3"><span class="ja">1827年、ふたたび京都。<br>漢詩を梁川星巌に学ぶ。</span><span class="en">1827: Kyoto again, writing Chinese verse under Yanagawa Seigan.</span></p>
+    <p class="nb bd" data-b="3" data-x="4"><span class="ja">1833年、江戸。佐藤一斎に学ぶ。<br>同じ門下に佐久間象山がいた。</span><span class="en">1833: Edo, under Satō Issai. Sakuma Shōzan studied there too.</span><span class="tagline"><span class="tag"><span class="ja">伝承</span><span class="en">Told</span></span><span class="ja">このころ、江戸で北斎と知り合ったとされる</span><span class="en">He is said to have met Hokusai in Edo around then</span></span></p>
+    <p class="nb bd" data-b="4"><span class="ja">学んだら、行う。<br>陽明学の「知行合一」が、彼の芯になった。</span><span class="en">Learn, then act. “Knowledge and action are one” became his core.</span></p>
   </div>
 </section>
 
-<!-- 6 -->
-<section class="slide" data-id="art">
-  <h1 class="m fs gal-t rv" style="--fs:8"><span class="ja">絵に、のめり込んだ。</span><span class="en">Lost in painting.</span></h1>
-  <div class="gal">
-    <figure class="zoomable bd" data-b="0" style="--d:.5s" data-cap-ja="高井鴻山の花の絵" data-cap-en="Flowers, by Takai Kōzan"><img src="img/kozan-flowers.jpg" alt="高井鴻山の花の絵"><figcaption><span class="ja">花の絵</span><span class="en">Flowers</span></figcaption></figure>
-    <figure class="zoomable bd" data-b="1" data-cap-ja="高井鴻山の妖怪画" data-cap-en="Yōkai, by Takai Kōzan"><img src="img/kozan-yokai-scroll.jpg" alt="高井鴻山の妖怪画"><figcaption><span class="ja">妖怪画</span><span class="en">Yōkai</span></figcaption></figure>
-    <figure class="zoomable bd wide" data-b="2" data-cap-ja="高井鴻山の妖怪画" data-cap-en="Yōkai, by Takai Kōzan"><img src="img/kozan-yokai-ride.jpg" alt="高井鴻山の妖怪画"><figcaption><span class="ja">妖怪画</span><span class="en">Yōkai</span></figcaption></figure>
-  </div>
-  <p class="sub gal-s rv" style="--d:1.2s"><span class="ja">高井鴻山の筆　クリックで大きく</span><span class="en">By Takai Kōzan · click to enlarge</span></p>
-</section>
-
-<!-- 7 -->
+<!-- 9 蔵を開く -->
 <section class="slide" data-id="kura">
   <div class="kura-light"></div>
-  <div class="c">
-    <h1 class="m fs rv" style="--fs:18;--d:1.9s"><span class="ja">蔵を開く。</span><span class="en" style="font-size:.6em">He opened<br>the storehouses.</span></h1>
+  <div class="c kura-c">
+    <h1 class="m fs rv" style="--fs:15;--d:1.9s"><span class="ja">蔵を開く。</span><span class="en" style="font-size:.6em">He opened<br>the storehouses.</span></h1>
     <p class="sub rv" style="--d:3s"><span class="ja">1836　天保の大飢饉　31歳</span><span class="en">1836 · The Great Tenpō Famine · age 31</span></p>
+  </div>
+  <div class="nar mid">
+    <p class="nb bd" data-b="1" data-x="2"><span class="ja">江戸から帰った年に、天保の大飢饉が来た。<br>鴻山は父と倉を開き、飢えた人々を救った。</span><span class="en">The year he came home, the Great Tenpō Famine struck. With his father he opened the storehouses to the hungry.</span></p>
+    <p class="nb bd" data-b="2" data-x="3"><span class="ja">53年前の天明の飢饉でも、祖父が蔵を開いていた。<br>404両あまりを献じ、600両を利息なしで貸し、<br>籾300俵を安く売った。</span><span class="en">In the famine of 1783 his grandfather had done the same: he gave 404 ryō, lent 600 without interest, and sold 300 bales of rice cheaply.</span></p>
+    <p class="nb bd" data-b="3"><span class="ja">幕府はその功に「高井」の姓を許した。<br>この家には、蔵を開く前例があった。</span><span class="en">For that, the shogunate granted the family the name Takai. This house had opened its storehouses before.</span><span class="pin"><span class="ja">2日目　高井鴻山記念館　籾を蓄えた蔵が一棟残る</span><span class="en">Day 2 · Kōzan Memorial Museum: one of the rice storehouses still stands</span></span></p>
   </div>
   <div class="door l"></div><div class="door r"></div>
 </section>
 
-<!-- 8 -->
-<section class="slide" data-id="age">
-  <div class="c" style="gap:calc(var(--u)*6)">
-    <div class="pair">
-      <div class="who w37"><div class="m fs" style="--fs:32">37</div><p class="sub"><span class="ja">鴻山</span><span class="en">Kōzan</span></p></div>
-      <div class="gap46 m bd fade" data-b="1" style="--d:.9s">+46</div>
-      <div class="who w83"><div class="m fs" style="--fs:32">83</div><p class="sub"><span class="ja">北斎</span><span class="en">Hokusai</span></p></div>
-    </div>
-    <div class="ask bd" data-b="2">
-      <label class="sub"><span class="ja">あなたの年齢</span><span class="en">Your age</span><input id="age" type="text" inputmode="numeric" maxlength="3" autocomplete="off"></label>
-      <p class="sub ans" id="ans"><span class="ja"><span class="an">—</span>歳の巨匠を、家に迎えられますか</span><span class="en">Could you host a <span class="an">—</span>-year-old master?</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- 9 -->
-<section class="slide" data-id="together">
-  <div class="layer l-dz bd fade" data-x="2">
-    <div class="backdrop" style="background-image:url(img/dotozu.jpg)"></div>
-    <img class="fit" src="img/dotozu.jpg" data-k="2.4" data-fw=".94" data-fh=".78" alt="">
-    <p class="cap"><span class="ja">上町祭屋台の天井絵「男浪・女浪」1845年　北斎</span><span class="en">“Male and Female Waves,” Kanmachi float ceiling, 1845 · Hokusai</span></p>
-  </div>
-  <div class="c shizai">
-    <h1 class="m fs bd" data-b="1" data-x="2" style="--fs:22"><span class="ja">私財で。</span><span class="en" style="font-size:.6em">Out of his<br>own pocket.</span></h1>
-  </div>
-  <div class="layer bd fade" data-b="2" data-x="3">
-    <div class="backdrop" style="background-image:url(img/hoo.jpg)"></div>
-    <img class="fit kb" src="img/hoo.jpg" data-k="2" data-fw=".92" data-fh=".8" alt="">
+<!-- 10 1842年 秋 -->
+<section class="slide" data-id="meet">
+  <div class="kura-light meet-light"></div>
+  <div class="layer bd fade hoo-l" data-b="3">
+    <img class="fit kb" src="img/hoo.jpg" data-k="1.6" data-fw=".5" data-fh=".84" alt="">
     <p class="cap"><span class="ja">葛飾北斎『鳳凰』</span><span class="en">Katsushika Hokusai, “Phoenix”</span></p>
   </div>
-  <div class="layer bd fade" data-b="3">
-    <div class="backdrop" style="background-image:url(img/zo-tojin.jpg)"></div>
-    <img class="fit kb" src="img/zo-tojin.jpg" data-k="2.2" data-fw=".92" data-fh=".8" alt="">
-    <p class="cap"><span class="ja">『象と唐人図』北斎の原画による鴻山との合作と伝わる</span><span class="en">“Elephant and Chinese Men” — said to be painted together</span></p>
+  <p class="chap"><span class="ja">第三章　画狂老人</span><span class="en">III · The old man mad about painting</span></p>
+  <p class="stamp"><span class="ja">1842年（天保13年）秋　信濃国 小布施村</span><span class="en">Autumn 1842 · Obuse, Shinano Province</span></p>
+  <div class="meet-pair bd" data-x="3">
+    <div class="pair">
+      <div class="who w37"><div class="m fs" style="--fs:26">37</div><p class="sub"><span class="ja">鴻山</span><span class="en">Kōzan</span></p></div>
+      <div class="gap46 m bd fade" data-b="1" style="--d:.9s">+46</div>
+      <div class="who w83"><div class="m fs" style="--fs:26">83</div><p class="sub"><span class="ja">北斎</span><span class="en">Hokusai</span></p></div>
+    </div>
+  </div>
+  <div class="nar low">
+    <p class="nb bd" data-b="1" data-x="2"><span class="ja">江戸から、83歳の北斎が小布施に来た。<br>迎えたのは37歳の鴻山。46歳の差である。</span><span class="en">Hokusai, 83, came from Edo. His host, Kōzan, was 37 — forty-six years younger.</span></p>
+    <p class="nb bd" data-b="2" data-x="3"><span class="ja">江戸では天保の改革で、絵への取り締まりが厳しくなっていた。<br>鴻山は、北斎が自由に描ける場所を用意した。</span><span class="en">In Edo, the Tenpō Reforms were cracking down on lavish pictures. Kōzan gave him a place to paint freely.</span><small class="src"><span class="ja">高井鴻山記念館の説明による。来た理由には諸説ある</span><span class="en">As the Kōzan Memorial Museum explains it; there are other theories</span></small></p>
+  </div>
+  <div class="quote bd" data-b="3" data-x="4">
+    <p class="q-lead"><span class="ja">北斎は75歳のとき、こう書いている。</span><span class="en">At 75, Hokusai had written:</span></p>
+    <p class="m q-text"><span class="ja">八十歳にしては益々進み<br>九十歳にて猶其奥意を極め<br>一百歳にして正に神妙ならん歟<br>百有十歳にしては<br>一点一格にして生るがごとくならん</span><span class="en">At eighty I will have improved still more; at ninety I will reach the heart of it; at a hundred, perhaps, the divine. At a hundred and ten, every dot and every line will be alive.</span></p>
+    <p class="q-gloss"><span class="ja">80歳でさらに伸び、90歳で奥義を極め、100歳で神の域へ。110歳になれば、点ひとつ、線一本が生きているようになる。</span></p>
+    <p class="src"><span class="ja">『富嶽百景』あとがき（1834年）</span><span class="en">Afterword to One Hundred Views of Mt Fuji, 1834</span></p>
+  </div>
+  <div class="meet-end"><h2 class="m fs bd" data-b="4" style="--fs:9"><span class="ja">83歳は、<br>まだ途中だった。</span><span class="en">At 83,<br>he was not done.</span></h2></div>
+</section>
+
+<!-- 11 小布施で描いたもの -->
+<section class="slide" data-id="late">
+  <p class="stamp"><span class="ja">1844–1849　小布施と江戸</span><span class="en">1844–1849 · Obuse and Edo</span></p>
+  <h2 class="m fs hd2 rv" style="--fs:6.4"><span class="ja">小布施で描いたもの</span><span class="en">What he painted here</span></h2>
+  <div class="odo">
+    <p class="sub"><span class="ja">北斎</span><span class="en">Hokusai</span></p>
+    <div class="m odo-n"><span class="age" data-ages="85,86,89,90">85</span><span class="u ja">歳</span></div>
+    <p class="sub odo-k"><span class="ja">鴻山 <b class="kage" data-ages="39,40,43,44">39</b>歳</span><span class="en">Kōzan, <b class="kage" data-ages="39,40,43,44">39</b></span></p>
+    <p class="m odo-y"><span class="yr" data-yrs="1844,1845,1848,1849">1844</span></p>
+  </div>
+  <div class="works">
+    <div class="wk bd" data-x="1">
+      <div class="wk-frame"><span class="ja">龍</span><span class="ja">鳳凰</span><span class="en">Dragon</span><span class="en">Phoenix</span></div>
+      <p class="wk-t"><span class="ja">東町の祭屋台の天井に、『龍』と『鳳凰』。</span><span class="en">For the ceiling of the Higashimachi festival float: a dragon and a phoenix.</span></p>
+      <span class="pin"><span class="ja">1日目　北斎館</span><span class="en">Day 1 · Hokusai Museum</span></span>
+    </div>
+    <div class="wk bd" data-b="1" data-x="2">
+      <figure class="wk-img zoomable" data-cap-ja="上町祭屋台の天井絵「男浪・女浪」1845年　葛飾北斎" data-cap-en="“Male and Female Waves,” Kanmachi float ceiling, 1845 · Hokusai"><img src="img/dotozu.jpg" alt="男浪・女浪"></figure>
+      <p class="wk-t"><span class="ja">上町の祭屋台。鴻山が私財で建て、天井を北斎に任せた。大波の『男浪』と『女浪』。</span><span class="en">The Kanmachi float: Kōzan paid for it and gave Hokusai the ceiling — two great waves, “Male” and “Female.”</span></p>
+      <p class="wk-s"><span class="ja">縁の花鳥は、北斎の下絵に鴻山が色を塗ったと考えられている。この年は3月から9月まで、半年あまり滞在したとみられる。</span><span class="en">The flowers and birds on the border are thought to be Kōzan’s colouring over Hokusai’s drawing. That year Hokusai seems to have stayed from March to September.</span></p>
+      <span class="pin"><span class="ja">1日目　北斎館</span><span class="en">Day 1 · Hokusai Museum</span></span>
+    </div>
+    <div class="wk bd" data-b="2" data-x="3">
+      <div class="tatami" aria-hidden="true"></div>
+      <p class="wk-t"><span class="ja">岩松院の本堂の天井に『八方睨み鳳凰図』。畳21枚分。</span><span class="en">The Phoenix on the ceiling of Ganshō-in’s main hall: the size of 21 tatami mats.</span></p>
+      <p class="wk-s"><span class="ja">完成は1848年、北斎89歳とされる。寺によれば、約1年をかけて描かれ、一度も塗り替えていない。</span><span class="en">Finished, it is thought, in 1848, when he was 89. The temple says it took about a year and has never been repainted.</span></p>
+      <span class="pin"><span class="ja">2日目　岩松院</span><span class="en">Day 2 · Ganshō-in</span></span>
+    </div>
+    <div class="wk bd" data-b="3">
+      <p class="wk-t"><span class="ja">1849年4月、江戸で没。90歳。</span><span class="en">April 1849: he died in Edo, at 90.</span></p>
+      <p class="m wk-q"><span class="ja">天我をして五年の命を保たしめば<br>真正の画工となるを得べし</span><span class="en">“If heaven would grant me five more years, I could become a true painter.”</span></p>
+      <p class="wk-s"><span class="ja">「天があと5年の命をくれたら、本物の絵描きになれるのに」。最期の言葉と伝わる（飯島虚心『葛飾北斎伝』）。</span><span class="en">His last words, as reported in an 1893 biography.</span></p>
+    </div>
   </div>
 </section>
 
-<!-- 10 -->
+<!-- 12 絵にのめり込む -->
+<section class="slide" data-id="art">
+  <h1 class="m fs gal-t rv" data-x="3" style="--fs:7"><span class="ja">絵に、のめり込んだ。</span><span class="en">Lost in painting.</span></h1>
+  <p class="sub gal-s2 rv" data-x="3" style="--d:.8s"><span class="ja">花鳥、山水、人物。晩年は、妖怪をたくさん描いた。</span><span class="en">Flowers and birds, landscapes, people — and, later in life, many yōkai.</span></p>
+  <div class="gal bd" data-x="3">
+    <figure class="zoomable" style="--d:.5s" data-cap-ja="高井鴻山の花の絵" data-cap-en="Flowers, by Takai Kōzan"><img src="img/kozan-flowers.jpg" alt="高井鴻山の花の絵"><figcaption><span class="ja">花</span><span class="en">Flowers</span></figcaption></figure>
+    <figure class="zoomable bd" data-b="1" data-cap-ja="高井鴻山の妖怪画" data-cap-en="Yōkai, by Takai Kōzan"><img src="img/kozan-yokai-scroll.jpg" alt="高井鴻山の妖怪画"><figcaption><span class="ja">妖怪</span><span class="en">Yōkai</span></figcaption></figure>
+    <figure class="zoomable bd wide" data-b="2" data-cap-ja="高井鴻山の妖怪画" data-cap-en="Yōkai, by Takai Kōzan"><img src="img/kozan-yokai-ride.jpg" alt="高井鴻山の妖怪画"><figcaption><span class="ja">妖怪</span><span class="en">Yōkai</span></figcaption></figure>
+  </div>
+  <div class="layer bd fade" data-b="3" data-x="4">
+    <div class="backdrop" style="background-image:url(img/kozan-yokai-wide.jpg)"></div>
+    <img class="fit kb" src="img/kozan-yokai-wide.jpg" data-k="1.8" data-fw=".96" data-fh=".9" alt="">
+    <div class="art-q"><p class="m"><span class="ja">「目を閉じると、<br>妖怪が現れる」</span><span class="en">“When I close my eyes, the yōkai appear.”</span></p><p class="sub"><span class="tag"><span class="ja">伝承</span><span class="en">Told</span></span><span class="ja">鴻山はそう言ったという</span><span class="en">So Kōzan is said to have put it</span></p></div>
+    <p class="cap"><span class="ja">高井鴻山の妖怪画（部分）</span><span class="en">Yōkai by Takai Kōzan (detail)</span></p>
+  </div>
+  <div class="layer bd fade" data-b="4">
+    <div class="backdrop" style="background-image:url(img/zo-tojin.jpg)"></div>
+    <img class="fit kb" src="img/zo-tojin.jpg" data-k="2.3" data-fw=".9" data-fh=".74" alt="">
+    <p class="cap"><span class="ja">『象と唐人図』　北斎の下絵をもとに、鴻山が描いた屏風</span><span class="en">“Elephant and Chinese Men”: a screen Kōzan painted from Hokusai’s drawing</span></p>
+    <span class="pin corner-pin"><span class="ja">2日目　高井鴻山記念館</span><span class="en">Day 2 · Kōzan Memorial Museum</span></span>
+  </div>
+</section>
+
+<!-- 13 献金・融資・支援 -->
+<section class="slide" data-id="money">
+  <p class="chap"><span class="ja">第四章　お金の使い方</span><span class="en">IV · How he used his money</span></p>
+  <h2 class="m fs hd2 rv" style="--fs:7"><span class="ja">献金・融資・支援</span><span class="en">Gifts, loans, patronage</span></h2>
+  <div class="cols solo">
+    <div class="col bd" data-b="1">
+      <p class="m col-h"><span class="ja">融資</span><span class="en">Loans</span></p>
+      <div class="ent"><b class="m"><span class="ja">藩</span><span class="en">Domains</span></b><p><span class="ja">松代・飯山・須坂などの藩に、お金を貸した</span><span class="en">Lent to Matsushiro, Iiyama, Suzaka and other domains</span></p></div>
+      <div class="ent"><b class="m">70,000<small>両</small></b><p><span class="tag"><span class="ja">伝承</span><span class="en">Told</span></span><span class="ja">飯山藩の借りは7万両にのぼったという</span><span class="en">Iiyama’s debt reportedly reached 70,000 ryō</span></p></div>
+      <div class="ent"><b class="m">0%</b><p><span class="ja">頼まれれば、利息をとらずに貸した</span><span class="en">Lent to people without interest when asked</span></p></div>
+    </div>
+    <div class="col bd" data-b="2">
+      <p class="m col-h"><span class="ja">献金</span><span class="en">Gifts</span></p>
+      <div class="ent"><b class="m">500<small>両</small></b><p><span class="ja">1847　善光寺大地震の救恤金</span><span class="en">1847 · relief after the Zenkōji earthquake</span></p></div>
+      <div class="ent"><b class="m">100<small>両</small></b><p><span class="ja">1847　九條家の娘の入内に</span><span class="en">1847 · for a Kujō daughter entering the court</span></p></div>
+      <div class="ent"><b class="m"><span class="ja">籾</span><span class="en">Rice</span></b><p><span class="ja">1853　品川台場の築造に</span><span class="en">1853 · for the Shinagawa forts</span></p></div>
+      <div class="ent"><b class="m"><span class="ja">献金</span><span class="en">Gift</span></b><p><span class="ja">1860　和宮の降嫁に</span><span class="en">1860 · for Princess Kazu’s wedding</span></p></div>
+      <div class="ent hot"><b class="m">10,000<small>両</small></b><p><span class="ja">1866　幕府へ。約束した額</span><span class="en">1866 · to the shogunate, promised</span></p></div>
+    </div>
+    <div class="col bd" data-b="3">
+      <p class="m col-h"><span class="ja">支援</span><span class="en">Patronage</span></p>
+      <div class="ent"><b class="m">1842</b><p><span class="ja">北斎に、描く部屋と時間を</span><span class="en">A room and time to paint, for Hokusai</span></p></div>
+      <div class="ent"><b class="m">1845</b><p><span class="ja">上町祭屋台を私財で建てる</span><span class="en">The Kanmachi float, out of his own pocket</span></p></div>
+      <div class="ent"><b class="m"><span class="ja">翛然楼</span><span class="en">Salon</span></b><p><span class="ja">書斎に文人や志士が集い、語り合った</span><span class="en">Writers and activists met and argued in his study</span></p></div>
+      <span class="pin"><span class="ja">1日目　客殿のサロン</span><span class="en">Day 1 · the salon</span></span>
+      <span class="pin"><span class="ja">2日目　翛然楼</span><span class="en">Day 2 · Yūzen-rō</span></span>
+    </div>
+  </div>
+  <p class="foot bd" data-b="4"><span class="ja">記録に残る献金は、約束した分を含めて約1万600両。</span><span class="en">Gifts on record, the promise included: about 10,600 ryō.</span></p>
+</section>
+
+<!-- 14 1866年 1万両 -->
+<section class="slide" data-id="pledge">
+  <p class="stamp"><span class="ja">1866年（慶応2年）　鴻山61歳</span><span class="en">1866 · Kōzan, 61</span></p>
+  <div class="pl-top">
+    <div class="m fs nw" style="--fs:19"><span class="cnt" data-from="0" data-to="10000">0</span><span class="u ja">両</span><span class="u en"> ryō</span></div>
+    <p class="sub big"><span class="ja">今のお金で数億円。<small>換算のしかたで約1億〜13億円</small></span><span class="en">Several hundred million yen today. <small>About ¥100 million–1.3 billion, depending on the method</small></span></p>
+  </div>
+  <div class="nar low wide">
+    <p class="nb bd" data-b="1" data-x="2"><span class="ja">幕府の役人が、献金を求めて来た。鴻山は答えた。<br>「献金の額を限る必要はない」</span><span class="en">Shogunate officials came asking for money. Kōzan told them: “There is no need to set a limit.”</span></p>
+    <p class="nb bd" data-b="2" data-x="3"><span class="tag"><span class="ja">伝承</span><span class="en">Told</span></span><span class="ja">威張る役人に「借金をする者が威張るな」という戯画を描いて見せ、<br>大笑いしたという。</span><span class="en">Then, the story goes, he drew the haughty officials a cartoon — “Borrowers shouldn’t swagger” — and laughed.</span></p>
+    <p class="nb bd" data-b="3" data-x="4"><span class="ja">話は勘定奉行の小栗忠順に届き、1万両の約束が結ばれた。<br>5,000・1,000・4,000両に分け、7年で納める。<br>そのために、農地や蔵を質に入れた。</span><span class="en">Word reached the finance commissioner, Oguri Tadamasa. The deal: 10,000 ryō in three parts, over seven years. Kōzan pawned farmland and storehouses to raise it.</span></p>
+    <p class="nb bd" data-b="4" data-x="5"><span class="ja">翌1867年、幕府は政権を朝廷に返した。<br>約束は、意味を失った。</span><span class="en">In 1867 the shogunate handed power back to the emperor. The promise lost its meaning.</span></p>
+    <p class="nb big bd" data-b="5"><span class="ja">実際に払った額は、記録に残っていない。</span><span class="en">How much he actually paid is not on record.</span></p>
+  </div>
+</section>
+
+<!-- 15 それでも、教えた -->
+<section class="slide" data-id="teach">
+  <div class="lamp"></div>
+  <p class="chap"><span class="ja">第五章　晩年</span><span class="en">V · Later years</span></p>
+  <div class="c">
+    <h1 class="m fs bd" data-x="1" style="--fs:12"><span class="ja">資産が底をついた。</span><span class="en" style="font-size:.9em">His fortune ran out.</span></h1>
+  </div>
+  <div class="c teach-c">
+    <h1 class="m fs bd" data-b="1" style="--fs:12"><span class="ja">それでも、教えた。</span><span class="en" style="font-size:.9em">Still, he taught.</span></h1>
+    <div class="nar inline">
+      <p class="nb bd" data-b="1" data-x="2" style="--d:.8s"><span class="ja">1879年、74歳。長野に私塾「高矣義塾」を開く。<br>授業料はぎりぎりまで下げ、学ぶ気のある人を誰も断らなかった。</span><span class="en">1879, at 74: a private school in Nagano, Takai Gijuku. He kept the fees as low as he could and turned away no one who wanted to learn.</span></p>
+      <p class="nb bd" data-b="2" data-x="3"><span class="ja">卒業生の多くは小学校の校長になった。<br>唱歌「ふるさと」を作詞した高野辰之の父も、ここで学んだ。</span><span class="en">Many graduates became school principals. The father of Takano Tatsuyuki, who wrote the song “Furusato,” studied here.</span></p>
+      <p class="nb bd" data-b="3"><span class="ja">1883年2月6日、78歳で没。<br>葬儀には236人が集まった。</span><span class="en">He died on 6 February 1883, at 78. 236 people came to his funeral.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 16 鴻山の78年 -->
 <section class="slide" data-id="timeline" data-steps="2">
   <p class="sub top rv"><span class="ja">鴻山の78年</span><span class="en">Kōzan’s 78 years</span></p>
   <div class="tlx tl-full"><div class="tl-tip"></div></div>
 </section>
 
-<!-- 11 -->
-<section class="slide" data-id="gave">
-  <p class="sub top rv"><span class="ja">差し出した順</span><span class="en">What he gave, in order</span></p>
-  <div class="stack">
-    <div class="it bd" data-b="1" data-x="2" data-year="1847"><div class="m fs" style="--fs:24">500<span class="u ja">両</span><span class="u en"> ryō</span></div><p class="sub"><span class="ja">1847　善光寺大地震の救恤金</span><span class="en">1847 · Relief after the Zenkōji quake</span></p></div>
-    <div class="it bd" data-b="2" data-x="3" data-year="1853"><div class="m fs" style="--fs:24"><span class="ja">籾</span><span class="en">Rice</span></div><p class="sub"><span class="ja">1853　品川台場の築造に献上</span><span class="en">1853 · For the Shinagawa forts</span></p></div>
-    <div class="it bd" data-b="3" data-x="4" data-year="1860"><div class="m fs" style="--fs:24"><span class="ja">献金</span><span class="en">A gift</span></div><p class="sub"><span class="ja">1860　和宮の降嫁に</span><span class="en">1860 · For Princess Kazu’s wedding</span></p></div>
-    <div class="it bd" data-b="4" data-year="1866"><div class="m fs nw" style="--fs:24">10,000<span class="u ja">両</span><span class="u en"> ryō</span></div><p class="sub big"><span class="ja">1866　約束した額。払った額は記録にない</span><span class="en">1866 · A promise. What he paid: no record.</span></p></div>
-  </div>
-  <div class="tlx tl-mini" data-hl="1847-1866"><div class="tl-tip"></div></div>
-</section>
-
-<!-- 12 -->
-<section class="slide" data-id="teach">
-  <div class="lamp"></div>
-  <div class="c">
-    <h1 class="m fs bd" data-x="1" style="--fs:13"><span class="ja">資産が底をついた。</span><span class="en" style="font-size:.9em">His fortune ran out.</span></h1>
-  </div>
-  <div class="c">
-    <h1 class="m fs bd" data-b="1" style="--fs:17"><span class="ja">それでも、<br>教えた。</span><span class="en" style="font-size:.8em">Still,<br>he taught.</span></h1>
-    <p class="sub bd" data-b="1" style="--d:1s"><span class="ja">74歳　高矣義塾　学ぶ者を拒まなかった</span><span class="en">At 74: a school that turned no one away.</span></p>
+<!-- 17 町が受け継いだ -->
+<section class="slide" data-id="legacy">
+  <p class="chap"><span class="ja">終章　それから</span><span class="en">Epilogue</span></p>
+  <h2 class="m fs hd2 rv" style="--fs:7"><span class="ja">町が、受け継いだ</span><span class="en">The town kept it</span></h2>
+  <div class="years">
+    <div class="yrw bd" data-b="0"><b class="m">1842</b><p><span class="ja">北斎が来た。</span><span class="en">Hokusai arrives.</span></p></div>
+    <div class="yrw bd" data-b="1"><b class="m">1976</b><p><span class="ja">町が北斎館を建てる。最初の年に3万4000人が訪れた。</span><span class="en">The town builds the Hokusai Museum. 34,000 visitors come in the first year.</span></p></div>
+    <div class="yrw bd" data-b="2"><b class="m"><span class="ja">1980年代</span><span class="en">1980s</span></b><p><span class="ja">町並みを整える。合言葉は「内は自分のもの、外はみんなのもの」。栗の小径の足もとは、栗の木。</span><span class="en">The streets are restored. The motto: “The inside is mine; the outside is everyone’s.” The Chestnut Lane is paved with chestnut wood.</span><span class="pin"><span class="ja">1日目　まちあるき</span><span class="en">Day 1 · town walk</span></span></p></div>
+    <div class="yrw bd" data-b="3"><b class="m">2000</b><p><span class="ja">オープンガーデン。いま130軒を超える家が、庭を人に開いている。</span><span class="en">Open Gardens: more than 130 households now open their gardens to visitors.</span></p></div>
+    <div class="yrw you bd" data-b="4"><b class="m">2026.12.9</b><p><span class="ja">あなたが来た。</span><span class="en">You arrive.</span></p></div>
   </div>
 </section>
 
-<!-- 13 -->
+<!-- 18 この2日間 -->
 <section class="slide" data-id="days">
-  <h1 class="m fs days-t rv" style="--fs:11"><span class="ja">この2日間</span><span class="en">Your two days</span></h1>
+  <h1 class="m fs days-t rv" style="--fs:8"><span class="ja">この2日間</span><span class="en">Your two days</span></h1>
   <div class="dayrows">
     <div class="dayrow"><span class="dl"><span class="ja">1日目</span><span class="en">Day 1</span></span>
       <div class="pt" style="--k:0"><i class="dot"></i><span class="pl"><span class="ja">まちあるき</span><span class="en">Town walk</span></span></div>
       <div class="pt" style="--k:1"><i class="dot"></i><span class="pl"><span class="ja">北斎館</span><span class="en">Hokusai Museum</span></span></div>
-      <div class="pt" style="--k:2"><i class="dot"></i><span class="pl"><span class="ja">酒蔵・栗菓子工場</span><span class="en">Sake brewery, chestnut sweets</span></span></div>
+      <div class="pt" style="--k:2"><i class="dot"></i><span class="pl"><span class="ja">酒蔵・栗菓子工場</span><span class="en">Sake, chestnut sweets</span></span></div>
       <div class="pt" style="--k:3"><i class="dot"></i><span class="pl"><span class="ja">客殿のサロン</span><span class="en">The salon</span></span></div>
     </div>
     <div class="dayrow"><span class="dl"><span class="ja">2日目</span><span class="en">Day 2</span></span>
       <div class="pt" style="--k:4"><i class="dot"></i><span class="pl"><span class="ja">岩松院</span><span class="en">Ganshō-in Temple</span></span></div>
-      <div class="pt" style="--k:5"><i class="dot"></i><span class="pl"><span class="ja">翛然楼</span><span class="en">Shōzen-rō, his study</span></span></div>
+      <div class="pt" style="--k:5"><i class="dot"></i><span class="pl"><span class="ja">翛然楼</span><span class="en">Yūzen-rō, his study</span></span></div>
     </div>
   </div>
-  <p class="q bd" data-b="1" data-x="2"><span class="ja">この道を、200年前に誰が歩いたでしょう</span><span class="en">Who walked this street 200 years ago?</span></p>
-  <p class="q bd" data-b="2" data-x="3"><span class="ja">86歳の画家に、この天井を描かせたのは誰でしょう</span><span class="en">Who had an 86-year-old paint this ceiling?</span></p>
-  <p class="q bd" data-b="3" data-x="4"><span class="ja">町の富は、どこで生まれ、どこへ使われたのでしょう</span><span class="en">Where was the town’s wealth made, and spent?</span></p>
-  <p class="q bd" data-b="4" data-x="5"><span class="ja">形が残ると、何が受け継がれるのでしょう</span><span class="en">When a form survives, what is handed down?</span></p>
-  <p class="q bd" data-b="5" data-x="6"><span class="ja">画材と部屋と時間を用意したのは誰でしょう</span><span class="en">Who gave him paint, a room, and time?</span></p>
-  <p class="q bd" data-b="6"><span class="ja">この書斎で、二人は何を語り合ったのでしょう</span><span class="en">What did the two men talk about in this room?</span></p>
+  <div class="look bd" data-b="1" data-x="2"><p class="lk"><span class="ja">足もとは、栗の木のブロック（栗の小径）</span><span class="en">Underfoot: chestnut-wood blocks on the Chestnut Lane</span></p><p class="q"><span class="ja">この道を、200年前に誰が歩いたでしょう</span><span class="en">Who walked this street 200 years ago?</span></p></div>
+  <div class="look bd" data-b="2" data-x="3"><p class="lk"><span class="ja">祭屋台の天井を見上げる。86歳の北斎の大波</span><span class="en">Look up at the float ceiling: the waves he painted at 86</span></p><p class="q"><span class="ja">86歳の画家に、この天井を描かせたのは誰でしょう</span><span class="en">Who had an 86-year-old paint this ceiling?</span></p></div>
+  <div class="look bd" data-b="3" data-x="4"><p class="lk"><span class="ja">酸っぱい川の土地が育てた栗と、町を富ませた酒</span><span class="en">Chestnuts from the sour river’s land, and the sake that made fortunes</span></p><p class="q"><span class="ja">町の富は、どこで生まれ、どこへ使われたのでしょう</span><span class="en">Where was the town’s wealth made, and spent?</span></p></div>
+  <div class="look bd" data-b="4" data-x="5"><p class="lk"><span class="ja">人が集い、語り合うための部屋</span><span class="en">A room made for people to gather and talk</span></p><p class="q"><span class="ja">形が残ると、何が受け継がれるのでしょう</span><span class="en">When a form survives, what is handed down?</span></p></div>
+  <div class="look bd" data-b="5" data-x="6"><p class="lk"><span class="ja">どこから見ても目が合う鳳凰。寺によれば、隠し絵がある</span><span class="en">A phoenix that meets your eye from anywhere — and, the temple says, a hidden picture</span><small class="tip"><span class="ja">本堂は冷えます。堂内は撮影できません</span><span class="en">The hall is cold. No photos inside.</span></small></p><p class="q"><span class="ja">画材と部屋と時間を用意したのは誰でしょう</span><span class="en">Who gave him paint, a room, and time?</span></p></div>
+  <div class="look bd" data-b="6"><p class="lk"><span class="ja">鴻山と佐久間象山が押し合ったという火鉢。2階からは、北斎らが眺めた雁田山</span><span class="en">The brazier Kōzan and Sakuma Shōzan are said to have shoved back and forth; upstairs, the view of Mt Kariya that Hokusai knew</span></p><p class="q"><span class="ja">この部屋で、彼らは何を語り合ったのでしょう</span><span class="en">What did they talk about in this room?</span></p></div>
 </section>
 
-<!-- 14 -->
+<!-- 19 問い -->
 <section class="slide" data-id="why">
   <div class="glow"></div>
   <div class="c" style="gap:calc(var(--u)*4)">
-    <h1 class="m fs bd" data-x="1" style="--fs:15"><span class="ja">なぜ<br>差し出したのか。</span><span class="en" style="font-size:.78em">Why did he<br>give it all?</span></h1>
+    <h1 class="m fs bd" data-x="1" style="--fs:12"><span class="ja">なぜ、<br>そこまで支えたのか。</span><span class="en" style="font-size:.86em">Why did he<br>go so far?</span></h1>
   </div>
   <div class="c" style="gap:calc(var(--u)*4)">
     <p class="sub big bd" data-b="1"><span class="ja">サロン文化という支援とつながりは、</span><span class="en">The salon: support, and people connected.</span></p>
-    <h1 class="m fs bd" data-b="1" style="--fs:13;--d:.8s"><span class="ja">小布施に<br>何を残したのか。</span><span class="en" style="font-size:.8em">What did it<br>leave in Obuse?</span></h1>
+    <h1 class="m fs bd" data-b="1" style="--fs:12;--d:.8s"><span class="ja">小布施に<br>何を残したのか。</span><span class="en" style="font-size:.86em">What did it<br>leave in Obuse?</span></h1>
   </div>
 </section>
 
@@ -262,6 +472,8 @@
 <div id="lb" class="overlay lb" role="dialog" aria-modal="true" aria-label="Image" hidden><figure><img alt=""><figcaption class="lbcap"></figcaption></figure><button type="button" data-act="close" class="x" aria-label="close">×</button></div>
 <script src="js/notes.js"></script>
 <script src="js/japan.js"></script>
+<script src="js/obuse-map.js"></script>
+<script src="js/obuse.js"></script>
 <script src="js/timeline.js"></script>
 <script src="js/ui.js"></script>
 <script src="js/deck.js"></script>

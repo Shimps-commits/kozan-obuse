@@ -6,12 +6,14 @@
   if (Q.has('thumb') || Q.has('snap')) return;
 
   var TITLES = {
-    ryo: ['10,000両', '10,000 ryō'], young: ['北斎を小布施に招いた若者', 'The young man who brought Hokusai'],
-    kozan: ['高井鴻山', 'Takai Kōzan'], map: ['小布施', 'Obuse'], study: ['16年', '16 years'],
-    art: ['絵に、のめり込んだ', 'Lost in painting'], kura: ['蔵を開く', 'The storehouses'], age: ['37と83', '37 and 83'],
-    together: ['私財で、ともに描く', 'Paid for, and painted together'], timeline: ['鴻山の78年', 'Kōzan’s 78 years'],
-    gave: ['差し出した順', 'What he gave'], teach: ['それでも、教えた', 'Still, he taught'],
-    days: ['この2日間', 'Your two days'], why: ['旅の問い', 'The question to carry']
+    title: ['北斎を小布施に招いた若者', 'The young man who brought Hokusai'], small: ['長野県でいちばん小さな町', 'Nagano’s smallest town'],
+    kozan: ['高井鴻山', 'Takai Kōzan'], land: ['川がつくった土地', 'Land made by a river'], kuri: ['米が育たない水、だから栗', 'Sour water, so chestnuts'],
+    ichi: ['道が交わる市場町', 'A market where roads met'], tomi: ['人と物と知恵が交わる町', 'Goods, people and ideas'],
+    study: ['16年', '16 years'], kura: ['蔵を開く', 'The storehouses'], meet: ['1842年 秋', 'Autumn 1842'],
+    late: ['小布施で描いたもの', 'What he painted here'], art: ['絵に、のめり込んだ', 'Lost in painting'],
+    money: ['献金・融資・支援', 'Gifts, loans, patronage'], pledge: ['1866年　1万両', '1866: 10,000 ryō'],
+    teach: ['それでも、教えた', 'Still, he taught'], timeline: ['鴻山の78年', 'Kōzan’s 78 years'],
+    legacy: ['町が、受け継いだ', 'The town kept it'], days: ['この2日間', 'Your two days'], why: ['旅の問い', 'The question to carry']
   };
   var store = {
     get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
@@ -66,7 +68,7 @@
     d.steps.forEach(function (s, k) { total += s + 1; if (k < d.i) done += s + 1; });
     done += d.step + 1;
     $('#prog i').style.width = (done / total * 100) + '%';
-    var art = d.id === 'young' || d.id === 'together';
+    var art = d.id === 'title' || (d.id === 'meet' && d.step >= 3) || (d.id === 'art' && d.step >= 3);
     H.classList.toggle('art', art);
     if (d.entered || !art) setInspect(false);
     markCur();
@@ -190,7 +192,7 @@
     if (Date.now() < swallowClick) return true;
     if (H.classList.contains('inspect')) { setInspect(false); return true; }
     var fig = e.target.closest('.zoomable');
-    if (fig && !(fig.classList.contains('bd') && !fig.classList.contains('vis'))) { openLB(fig); return true; }
+    if (fig && !fig.closest('.bd:not(.vis)')) { openLB(fig); return true; }
     var dot = e.target.closest('.pt .dot');
     if (dot) {
       var pts = [].slice.call(document.querySelectorAll('[data-id="days"] .pt'));

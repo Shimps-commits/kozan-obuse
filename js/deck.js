@@ -24,7 +24,6 @@
   try { if ('BroadcastChannel' in window && MODE === 'main') chan = new BroadcastChannel('kozan-deck'); } catch (e) {}
   var presenter = null;
   var seen = {};
-  var costMode = 'range';
 
   /* ---------- 文字を一字（英語は一語）ずつに分ける ---------- */
   function splitReveal() {
@@ -117,19 +116,42 @@
       var v = (b == null || st >= +b) && (x == null || st < +x);
       e.classList.toggle('vis', v);
     });
+    // .solo：見えている子のうち最後のものに cur（縦長画面では1つずつ見せる）
+    s.querySelectorAll('.solo').forEach(function (c) {
+      var kids = [].slice.call(c.children), last = null;
+      kids.forEach(function (k) { k.classList.remove('cur'); if (k.classList.contains('vis')) last = k; });
+      if (last) last.classList.add('cur');
+    });
+  }
+
+  /* 年齢・年の数字を次の値まで動かす（data-ages / data-yrs の並びのステップ番目） */
+  function odo(s, st) {
+    s.querySelectorAll('[data-ages],[data-yrs]').forEach(function (el) {
+      var arr = (el.dataset.ages || el.dataset.yrs).split(',').map(Number);
+      var to = arr[Math.min(st, arr.length - 1)];
+      var from = parseInt(el.textContent, 10);
+      if (isNaN(from)) from = arr[0];
+      cancelAnimationFrame(el._raf);
+      if (from === to || still()) { el.textContent = to; return; }
+      var t0 = performance.now(), dur = 1100;
+      (function f(t) {
+        var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(from + (to - from) * e);
+        if (p < 1) el._raf = requestAnimationFrame(f);
+      })(t0);
+    });
   }
 
   /* 画面ごとの追加演出 */
   var HOOKS = {
-    ryo: function (s, st, o) {
+    pledge: function (s, st, o) {
+      if (!o.entered) return;
       var c = s.querySelector('.cnt');
-      if (st === 0) { count(c, 0, false); c.dataset.from = 0; return; }
-      count(c, 10000, o.fwd, 2600, 250);
+      c.dataset.from = 0;
+      count(c, 10000, o.fwd, 2600, 500);
     },
-    market: function (s, st) { s.classList.toggle('lit', st >= 1); },
-    together: function (s, st) { s.classList.toggle('dim', st === 1); },
+    late: function (s, st) { odo(s, st); },
     timeline: function (s, st) { s.classList.toggle('s1', st >= 1); s.classList.toggle('s2', st >= 2); },
-    cost: function () { renderCost(); },
     days: function (s, st) {
       s.querySelectorAll('.pt').forEach(function (p, k) {
         p.classList.toggle('seen', k + 1 <= st);
@@ -137,26 +159,6 @@
       });
     }
   };
-
-  /* 1万両の換算：知るぽると（江戸中〜後期の米・そば）、明治大学博物館（幕末の米） */
-  var COST = {
-    range: ['約1億〜13億', '0.1–1.3 billion', '換算のしかたで、これだけ変わる', 'It depends on how you count.'],
-    late:  ['約1億', '100 million', '幕末の米価で　1両＝約1万円', '1 ryō ≈ ¥10,000 at 1860s rice prices'],
-    rice:  ['約4億', '400 million', '江戸中〜後期の米価で　1両＝約4万円', '1 ryō ≈ ¥40,000 at earlier rice prices'],
-    soba:  ['約12億〜13億', '1.2–1.3 billion', '江戸中〜後期のそば代で　1両＝12〜13万円', '1 ryō ≈ ¥120,000–130,000 in soba']
-  };
-  var COST_ORDER = ['range', 'late', 'rice', 'soba'];
-  function renderCost() {
-    var s = document.querySelector('[data-id="cost"]');
-    if (!s) return;
-    var v = COST[costMode] || COST.range;
-    s.querySelector('.amt-ja').textContent = v[0];
-    s.querySelector('.amt-en').textContent = v[1];
-    s.querySelector('.rate-ja').textContent = v[2];
-    s.querySelector('.rate-en').textContent = v[3];
-    s.querySelectorAll('.tg button').forEach(function (b) { b.classList.toggle('on', b.dataset.m === costMode); });
-  }
-  function toggleCost() { costMode = COST_ORDER[(COST_ORDER.indexOf(costMode) + 1) % COST_ORDER.length]; renderCost(); }
 
   /* 掲載許可が出た画像の差し込み枠：ファイルがあれば背景に出す */
   function probeSlots() {
@@ -235,7 +237,6 @@
       case 'end': go(N - 1, steps[N - 1]); break;
       case 'lang': setLang(lang === 'ja' ? 'en' : 'ja'); break;
       case 'goto': go(+d.i || 0, +d.step || 0); break;
-      case 'toggle': toggleCost(); break;
       case 'black': H.classList.toggle('blackout'); break;
     }
   }
@@ -268,7 +269,6 @@
       else if (k === 'l' || k === 'L') setLang(lang === 'ja' ? 'en' : 'ja');
       else if (k === 'f' || k === 'F') toggleFull();
       else if (k === 'p' || k === 'P') openPresenter();
-      else if (k === 't' || k === 'T') toggleCost();
       else if (k === 'b' || k === 'B' || k === '.') H.classList.toggle('blackout');
     });
 
@@ -276,18 +276,6 @@
       if (e.target.closest('input,button,label')) return;
       if (window.__uiClick && window.__uiClick(e)) return;
       if (e.clientX < innerWidth * 0.22) prev(); else next();
-    });
-    document.querySelectorAll('.tg button').forEach(function (b) {
-      b.addEventListener('click', function (e) { e.stopPropagation(); costMode = b.dataset.m; renderCost(); });
-    });
-
-    var age = document.getElementById('age'), ans = document.getElementById('ans');
-    age.addEventListener('input', function () {
-      var v = parseInt(age.value.replace(/[^\d０-９]/g, '').replace(/[０-９]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0xFEE0); }), 10);
-      if (v > 0 && v < 130) {
-        ans.querySelectorAll('.an').forEach(function (a) { a.textContent = v + 46; });
-        ans.classList.add('on');
-      } else ans.classList.remove('on');
     });
 
     var idleT;
@@ -305,7 +293,7 @@
     for (var d = 1; d <= 30; d++) {
       var s = document.createElement('span');
       s.textContent = d;
-      if (d % 10 === 3 || d % 10 === 8) { s.className = 'hot'; s.style.setProperty('--d', (0.25 + hot++ * 0.22) + 's'); }
+      if (d % 10 === 3 || d % 10 === 8) { s.className = 'hot'; s.style.setProperty('--d', (0.5 + hot++ * 0.22) + 's'); }
       cal.appendChild(s);
     }
   }
@@ -337,14 +325,21 @@
     });
   }
 
+  /* ---------- 岩松院の天井：畳21枚 ---------- */
+  function buildTatami() {
+    document.querySelectorAll('.tatami').forEach(function (t) {
+      for (var i = 0; i < 21; i++) { var m = document.createElement('i'); m.style.setProperty('--i', i); t.appendChild(m); }
+    });
+  }
+
   /* ---------- 起動 ---------- */
   buildCal();
+  buildTatami();
   probeSlots();
   splitReveal();
   checkKanagawa().then(function () {
     initSteps();
     fitAll();
-    renderCost();
     var fontsReady = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
     var timeout = new Promise(function (r) { setTimeout(r, 2500); });
     return Promise.race([fontsReady, timeout]);

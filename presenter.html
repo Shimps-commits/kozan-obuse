@@ -51,7 +51,7 @@ footer{padding:1vh 2vw;font-size:1.6vh;color:var(--dim);border-top:1px solid #1b
     <div id="nextInfo"></div>
   </aside>
 </main>
-<footer><span id="warn"></span> → / Space 次　← 前　Home / End　L 日英　T 米／そば　B 暗転　タイマーはクリックでリセット</footer>
+<footer><span id="warn"></span> → / Space 次　← 前　Home / End　L 日英　B 暗転　タイマーはクリックでリセット</footer>
 <script src="js/notes.js"></script>
 <script>
 (function(){
@@ -117,7 +117,6 @@ footer{padding:1vh 2vw;font-size:1.6vh;color:var(--dim);border-top:1px solid #1b
     else if (k === 'Home') { e.preventDefault(); cmd('home'); }
     else if (k === 'End') { e.preventDefault(); cmd('end'); }
     else if (k === 'l' || k === 'L') cmd('lang');
-    else if (k === 't' || k === 'T') cmd('toggle');
     else if (k === 'b' || k === 'B' || k === '.') cmd('black');
   });
   document.getElementById('lang').addEventListener('click', function(){ cmd('lang'); });
