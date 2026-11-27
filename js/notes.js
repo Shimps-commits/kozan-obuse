@@ -11,9 +11,9 @@ window.KOZAN_NOTES = {
     en: 'Obuse is the smallest municipality in Nagano by area: 19.12 square kilometres, about a third of Manhattan. Around 10,000 people live here, 170 km from Tokyo as the crow flies.\nYet about a million people visit every year.\nWhy this small town?'
   },
   kozan: {
-    cue: { ja: '→ 人柄の一言 → 「まず、この町から」。肖像はクリックで拡大', en: '→ his character → “begin with the town.” Click the portrait to enlarge' },
-    ja: 'その理由をたどっていくと、ひとりの若者に行き着きます。高井鴻山。1806年にこの小布施で生まれ、1883年に亡くなりました。肖像は横山上龍の筆です。\n「我は吾が様に依る」。自分は自分のやり方でいく。鴻山の印に彫られた言葉です。\n遊び人で、探求心のかたまりでした。\nただ、彼を知るには、まずこの町を知る必要があります。',
-    en: 'Follow that question back and you reach one young man: Takai Kōzan, born here in 1806, died 1883. The portrait is by Yokoyama Jōryū.\nOne of his seals reads “I go by my own way.”\nHe loved to play, and he never stopped asking questions.\nBut to understand him, we have to start with the town.'
+    cue: { ja: '→ 略年表 → 「まず、この町から」。肖像はクリックで拡大', en: '→ short timeline → “begin with the town.” Click the portrait to enlarge' },
+    ja: 'その理由をたどっていくと、ひとりの若者に行き着きます。高井鴻山。名は健、鴻山は号です。1806年にこの小布施で生まれ、1883年に78歳で亡くなりました。肖像は横山上龍の筆です。\n小布施の豪農商・高井家の当主で、晩年の葛飾北斎を招いて支え、飢饉の救済や献金を重ね、最後は私塾で教えた人です。\n15歳で京都へ、31歳で天保の飢饉に蔵を開き、37歳で北斎を迎え、61歳で幕府に1万両を約束し、74歳で塾を開きます。\n遊び人で、探求心のかたまりでもありました。ただ、彼を知るには、まずこの町を知る必要があります。',
+    en: 'Follow that question back and you reach one young man: Takai Kōzan — personal name 健, Kōzan being his art name — born here in 1806, died 1883 at 78. The portrait is by Yokoyama Jōryū.\nHe headed a wealthy Obuse merchant family, hosted the aging Hokusai, gave famine relief and money to the nation, and ended his life teaching.\nKyoto at 15, the storehouses at 31, Hokusai at 37, a 10,000-ryō promise at 61, a school at 74.\nHe loved to play and never stopped asking questions. But to understand him, we have to start with the town.'
   },
   land: {
     cue: { ja: '→ 扇状地の等高線が光る → 町境 → 1万年前', en: '→ the fan lights up → town boundary → 10,000 years' },
@@ -40,10 +40,15 @@ window.KOZAN_NOTES = {
     ja: '15歳で家を出て、京都に2回、江戸に1回。31歳まで、およそ16年学びました。15歳は、今なら高校1年生です。\n1820年、京都で書・絵・和歌・儒学。1827年、ふたたび京都で、漢詩を梁川星巌に。\n1833年、江戸で佐藤一斎に学びます。同じ門下に佐久間象山がいました。このころ江戸で北斎と知り合ったとされます。\n学んだら、行う。陽明学の「知行合一」が、鴻山の芯になります。',
     en: 'He left home at 15 — a high-school freshman today — and studied for about 16 years: twice in Kyoto, once in Edo.\n1820, Kyoto: calligraphy, painting, poetry, Confucian learning. 1827, Kyoto again: Chinese verse with Yanagawa Seigan.\n1833, Edo: he studied under Satō Issai, alongside Sakuma Shōzan. Around then, it is said, he first met Hokusai in Edo.\nLearn, then act: “knowledge and action are one.” That became his core.'
   },
+  kikin: {
+    cue: { ja: '→ 東北の被害 → 一揆・大塩の乱 → 御救小屋と鴻山の帰郷', en: '→ the north-east → riots → relief huts, Kōzan comes home' },
+    ja: '鴻山が江戸で学んでいたころ、日本は天保の大飢饉のさなかにありました。1833年、大雨と洪水、冷害で大凶作になり、1835年から37年がもっとも深刻で、1839年まで続きます。\n被害はとくに東北で大きく、全国の人口は5年で約125万人減ったと推計されています。\n米の値段が跳ね上がり、各地で一揆や打ちこわしが起きました。1837年には大坂で大塩平八郎の乱が起きています。\n江戸では21か所に御救小屋が建ち、70万人を超える人が救いを受けました。絵は、京都に設けられた御救小屋の様子です。\nそのさなかの1836年、31歳の鴻山が小布施に帰ってきます。',
+    en: 'While Kōzan was studying in Edo, Japan was in the middle of the Great Tenpō Famine. In 1833 rain, floods and a cold summer ruined the harvest; it was worst from 1835 to 1837 and lasted until 1839.\nThe north-east suffered most. Japan’s population is estimated to have fallen by about 1.25 million in five years.\nRice prices soared and riots broke out; in 1837 Ōshio Heihachirō led an uprising in Osaka.\nEdo built relief huts in 21 places, and more than 700,000 people received aid. The picture shows relief huts in Kyoto.\nIn 1836, in the middle of all this, Kōzan, 31, came home to Obuse.'
+  },
   kura: {
-    cue: { ja: '→ 扉が開く → 飢饉 → 祖父 → 高井の姓', en: '→ doors open → famine → grandfather → the Takai name' },
-    ja: '1836年、31歳。江戸から帰ったその年に、天保の大飢饉が来ました。鴻山は父と倉を開き、飢えた人々を救いました。\nこの家には前例がありました。53年前、1783年の天明の飢饉で、祖父は404両あまりを献じ、600両を利息なしで貸し、籾300俵を安く売っています。幕府はその功で「高井」の姓を許しました。\n籾を蓄えた蔵の一棟は、今も高井鴻山記念館に残っています。2日目に見られます。',
-    en: '1836. He was 31 and had just come home from Edo when the Great Tenpō Famine hit. With his father, he opened the storehouses and fed people.\nThe family had done this before. In the famine of 1783 his grandfather gave 404 ryō, lent 600 interest-free, and sold 300 bales of rice cheaply. For that, the shogunate granted them the surname Takai.\nOne of the family’s rice storehouses still stands at the Kōzan Memorial Museum — you’ll see it on day two.'
+    cue: { ja: '→ 倉を開く → 蔵を建てて雇う（伝承）→ 誇り → 祖父と知行合一 → 焼け残った3棟', en: '→ opens storehouses → builds and hires (story) → pride → grandfather → three surviving storehouses' },
+    ja: '江戸から帰ったその年、鴻山は父と倉を開き、飢えた人々を救いました。\nそれだけではありません。屋敷の中に土蔵や塀を建てる工事を起こし、町の人を人足として雇って、賃金や米を払ったと伝わります。どれか1棟に名前がついているわけではなく、屋敷の米蔵や穀蔵、塀の工事そのものを指す話です。\nただ配るのではなく、働いた対価として渡す。人々が誇りを失わずに生き延びられるように、という考えでした。\nこの家には前例がありました。53年前の天明の飢饉で、祖父は404両あまりを献じ、600両を利息なしで貸し、幕府から「高井」の姓と帯刀を許されています。鴻山自身は、学んだら行う陽明学の「知行合一」を軸にしていました。\n当時の屋敷は間口30間、約54メートル、奥行80間、約144メートル。1878年の大火で主屋と多くの蔵が焼けました。焼け残った文庫蔵・屋台庫・穀蔵の3棟が、いまの高井鴻山記念館にあり、飢饉のときに建てた蔵の一部がここに含まれると考えられています。2日目に見られます。',
+    en: 'The year he came home, Kōzan and his father opened the storehouses and fed the hungry.\nThat wasn’t all. The story goes that he started building storehouses and walls on the family estate, hiring townspeople as labourers and paying them in wages and rice. It refers to the building work as a whole — the rice and grain stores and the walls — not to one named building.\nNot handouts, but pay for work, so that people could get through the famine without losing their pride.\nThe family had done this before: in the famine of 1783 his grandfather gave 404 ryō and lent 600 without interest, and the shogunate granted the surname Takai and the right to wear a sword. Kōzan himself lived by “knowledge and action are one.”\nThe estate was about 54 metres wide and 144 deep. A fire in 1878 destroyed the main house and most storehouses. Three survived — the library, float and grain storehouses — and today form the Kōzan Memorial Museum. Some of the famine-era buildings are thought to be among them. We see them on day two.'
   },
   meet: {
     cue: { ja: '→ +46 → 天保の改革 → 北斎の言葉（鳳凰）→「まだ途中」', en: '→ +46 → Tenpō Reforms → Hokusai’s words → “not done”' },

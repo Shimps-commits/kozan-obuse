@@ -9,7 +9,7 @@
     title: ['北斎を小布施に招いた若者', 'The young man who brought Hokusai'], small: ['長野県でいちばん小さな町', 'Nagano’s smallest town'],
     kozan: ['高井鴻山', 'Takai Kōzan'], land: ['川がつくった土地', 'Land made by a river'], kuri: ['米が育たない水、だから栗', 'Sour water, so chestnuts'],
     ichi: ['道が交わる市場町', 'A market where roads met'], tomi: ['人と物と知恵が交わる町', 'Goods, people and ideas'],
-    study: ['16年', '16 years'], kura: ['蔵を開く', 'The storehouses'], meet: ['1842年 秋', 'Autumn 1842'],
+    study: ['16年', '16 years'], kikin: ['天保の大飢饉', 'The Great Tenpō Famine'], kura: ['蔵を開き、蔵を建てる', 'Storehouses opened and built'], meet: ['1842年 秋', 'Autumn 1842'],
     late: ['小布施で描いたもの', 'What he painted here'], art: ['絵に、のめり込んだ', 'Lost in painting'],
     money: ['献金・融資・支援', 'Gifts, loans, patronage'], pledge: ['1866年　1万両', '1866: 10,000 ryō'],
     teach: ['それでも、教えた', 'Still, he taught'], timeline: ['鴻山の78年', 'Kōzan’s 78 years'],

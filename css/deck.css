@@ -127,6 +127,8 @@ html[lang=en] .kicker{letter-spacing:.06em}
 .slide.active .r-flow{animation:flow 2.4s linear infinite}
 @keyframes flow{to{stroke-dashoffset:-33}}
 .t-bnd{fill:rgba(216,69,47,.12)!important;stroke:#fff;stroke-width:4;stroke-dasharray:16 10;stroke-opacity:.9}
+.t-bnd.line{fill:none!important;stroke-width:5;stroke-opacity:.85}
+.t-lab.bnd text{fill:#ffd9d2}
 .t-old{stroke:#fff;stroke-width:7;stroke-dasharray:18 14;stroke-opacity:.95}
 .t-levee{stroke:var(--shu);stroke-width:18;stroke-opacity:1}
 .t-road{stroke:#e9eef8;stroke-width:6;stroke-dasharray:2 14;stroke-opacity:.95}
@@ -174,6 +176,14 @@ html[lang=en] .st > span{letter-spacing:.04em}
 .row{flex-direction:row;gap:7vw}
 .kz-name{text-align:left}
 .yrs2{font-size:calc(var(--u)*6);margin:calc(var(--u)*1) 0 calc(var(--u)*3)}
+.kz-name{max-width:52vw}
+.kz-meta{margin:calc(var(--u)*1.2) 0 0;display:flex;align-items:baseline;gap:1.2em;font-size:calc(var(--u)*2.4);color:var(--dim);letter-spacing:.1em}
+.kz-meta .m{font-size:calc(var(--u)*4.6);letter-spacing:.02em}
+.kz-sum{margin:calc(var(--u)*2) 0 0;font-size:calc(var(--u)*2.9);line-height:1.7;color:#fff;font-weight:400}
+.kz-tl{list-style:none;margin:calc(var(--u)*2.4) 0 0;padding:calc(var(--u)*1.6) 0 0;border-top:1px solid rgba(111,154,216,.4);display:grid;gap:calc(var(--u)*.7)}
+.kz-tl li{display:grid;grid-template-columns:calc(var(--u)*9) 1fr;font-size:calc(var(--u)*2.3);color:rgba(255,255,255,.86);line-height:1.45}
+.kz-tl b{font-family:"ShipporiX",serif;font-weight:800;color:var(--ai2)}
+.kz-next{margin-top:calc(var(--u)*2.4);white-space:normal}
 .swap{display:grid;place-items:center}
 .swap>*{grid-area:1/1}
 .swap.left{place-items:start}
@@ -202,6 +212,10 @@ figure.por-wrap{margin:0;position:relative;width:calc(var(--u)*52);height:calc(v
 .door.r{right:0;box-shadow:inset 2px 0 0 rgba(111,154,216,.35)}
 .slide.active .door.l{transform:translateX(-100%)}
 .slide.active .door.r{transform:translateX(100%)}
+
+/* ---------- 天保の大飢饉 ---------- */
+.famine-l .fit{left:73%;top:46%;filter:sepia(.15) brightness(.92)}
+.famine-l .cap{left:auto;right:5vw;max-width:30vw;text-align:right}
 
 /* ---------- 10 1842年 秋 ---------- */
 .meet-pair{position:absolute;left:0;right:0;top:calc(var(--u)*25);display:flex;justify-content:center;z-index:4}
@@ -354,7 +368,11 @@ html[lang=en] .lk{letter-spacing:.02em}
 .q{margin:0;font-size:calc(var(--u)*4.2);color:#fff;letter-spacing:.1em;line-height:1.5}
 html[lang=en] .q{letter-spacing:.02em}
 
-/* ---------- 19 問い ---------- */
+/* ---------- 19 問い（背景に鴻山の肖像） ---------- */
+.why-bg .backdrop{filter:blur(18px) brightness(.42) sepia(.25);inset:-4%}
+.why-bg .fit{filter:brightness(.5) sepia(.15)}
+.why-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(11,13,17,.62),rgba(11,13,17,.2) 70%)}
+.slide[data-id="why"] .glow{opacity:.5!important}
 .glow{position:absolute;left:50%;top:50%;width:130vmin;height:130vmin;transform:translate(-50%,-50%) scale(.15);border-radius:50%;
   background:radial-gradient(circle,rgba(216,69,47,.5),rgba(216,69,47,.14) 38%,transparent 68%);opacity:0;filter:blur(10px);
   transition:transform 12s cubic-bezier(.2,.6,.3,1) .3s,opacity 6s ease .3s}
@@ -527,6 +545,8 @@ html.art:not(.inspect) .slide.active .layer.vis .fit,html.art:not(.inspect) .sli
   .pair{gap:calc(var(--u)*34)}
   .pair .who .fs{font-size:calc(var(--u)*22)!important}
   .gap46{top:calc(var(--u)*7);font-size:calc(var(--u)*9)}
+  .famine-l .fit{left:50%;top:44%}
+  .famine-l .cap{left:6vw;right:6vw;max-width:none;text-align:left;top:calc(var(--u)*34);bottom:auto}
   .hoo-l .fit{left:50%}
   .hoo-l .cap{top:calc(var(--u)*19);bottom:auto;left:6vw;right:6vw}
   .hoo-l::after{background:linear-gradient(0deg,rgba(11,13,17,.96) 46%,rgba(11,13,17,.4) 75%,rgba(11,13,17,.2))}

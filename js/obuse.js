@@ -118,6 +118,13 @@
       label(g, c, sx / n, sy / n, '小布施町', 'Obuse town', 'big', 'middle', -40, 0);
       label(g, c, sx / n, sy / n, '19.12km²', '19.12 km²', 'small', 'middle', -40, 46);
     },
+    // 町境の線だけ（拡大図用）。ラベルは町境の上の、指定した点にいちばん近いところへ
+    'boundary:line': function (g, c) {
+      el('path', { d: pathD(c, M.boundary, true), 'class': 't-bnd line' }, g);
+      var b = M.boundary, best = 0, bd = 1e9, tx = 138.2995, ty = 36.6905;
+      for (var i = 0; i < b.length; i += 2) { var d = Math.abs(b[i] - tx) + Math.abs(b[i + 1] - ty); if (d < bd) { bd = d; best = i; } }
+      label(g, c, b[best], b[best + 1], '小布施町の町境', 'Obuse town boundary', 'small bnd', 'end', -22, -12);
+    },
     'upstream': function (g, c) {
       var a = [138.3452, 36.6807], b = [138.3600, 36.6837];
       el('path', { d: pathD(c, [a[0], a[1], b[0], b[1]]), 'class': 't-old', style: 'stroke-dasharray:none;stroke-width:6' }, g);
