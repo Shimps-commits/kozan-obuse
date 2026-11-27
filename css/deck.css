@@ -243,7 +243,11 @@ html[lang=en] .wk-q{font-size:calc(var(--u)*4);line-height:1.35}
   font-family:"ShipporiX",serif;font-weight:800;font-size:calc(var(--u)*7);color:rgba(169,207,255,.85)}
 html[lang=en] .wk-frame span{font-size:calc(var(--u)*4)}
 .wk-img{margin:0 0 calc(var(--u)*1)}
-.wk-img img{display:block;width:min(100%,calc(var(--u)*84));height:auto;box-shadow:0 calc(var(--u)*2) calc(var(--u)*6) rgba(0,0,0,.6)}
+.wk-img img{display:block;width:auto;max-width:100%;height:calc(var(--u)*40);object-fit:contain;box-shadow:0 calc(var(--u)*2) calc(var(--u)*6) rgba(0,0,0,.6)}
+.wk-pair{display:flex;gap:calc(var(--u)*2);align-items:flex-start}
+.wk-pair .wk-img{min-width:0}
+.wk-pair .wk-img img{height:calc(var(--u)*30)}
+.wk-c{margin-top:calc(var(--u)*1);font-size:calc(var(--u)*1.9);color:var(--dim);letter-spacing:.1em}
 .tatami{display:grid;grid-template-columns:repeat(7,calc(var(--u)*5.4));grid-auto-rows:calc(var(--u)*10.8);gap:3px;margin-bottom:calc(var(--u)*1)}
 .tatami i{display:block;border:1px solid rgba(111,154,216,.65);background:rgba(42,91,168,.14);opacity:0;transform:scale(.85);
   transition:opacity .6s var(--ease) calc(.3s + var(--i)*55ms),transform .8s var(--ease) calc(.3s + var(--i)*55ms)}
