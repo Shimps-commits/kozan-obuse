@@ -247,6 +247,7 @@ html[lang=en] .wk-frame span{font-size:calc(var(--u)*4)}
 .wk-pair{display:flex;gap:calc(var(--u)*2);align-items:flex-start}
 .wk-pair .wk-img{min-width:0}
 .wk-pair .wk-img img{height:calc(var(--u)*30)}
+.wk-pair.tri .wk-img img{height:calc(var(--u)*28)}
 .wk-c{margin-top:calc(var(--u)*1);font-size:calc(var(--u)*1.9);color:var(--dim);letter-spacing:.1em}
 .tatami{display:grid;grid-template-columns:repeat(7,calc(var(--u)*5.4));grid-auto-rows:calc(var(--u)*10.8);gap:3px;margin-bottom:calc(var(--u)*1)}
 .tatami i{display:block;border:1px solid rgba(111,154,216,.65);background:rgba(42,91,168,.14);opacity:0;transform:scale(.85);
